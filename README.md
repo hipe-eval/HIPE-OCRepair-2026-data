@@ -1,7 +1,7 @@
 # HIPE OCRepair 2026 - Impresso-OCR-Bench
 
 
-[HIPE-OCRepair-2026](https://hipe-eval.github.io/HIPE-OCRepair-2026/) is a [ICDAR 2026 Competition](https://icdar2026.org/index.php/competitions/) focused on **LLM-assisted OCR post-correction of historical documents**, with a particular emphasis on historical newspapers, but not only.
+[HIPE-OCRepair-2026](https://hipe-eval.github.io/HIPE-OCRepair-2026/) is an [ICDAR 2026 Competition](https://icdar2026.org/index.php/competitions/) focused on **LLM-assisted OCR post-correction of historical documents**, with a particular emphasis on historical newspapers, but not only.
 
 
 With renewed interest driven by large language models (LLMs), OCR post-correction has (re)gained momentum, resulting into a growing number of models and experimental approaches. However, these efforts often rely on heterogeneous legacy datasets that come with important limitations, making systematic evaluation and meaningful comparison across approaches difficult. 
