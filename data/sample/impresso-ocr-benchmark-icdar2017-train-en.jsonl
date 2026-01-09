@@ -8,7 +8,7 @@
     "primary_dataset_license": "CC BY-NC-SA 4.0",
     "benchmark_dataset_name": "impresso-ocr-bench-icdar2017",
     "benchmark_dataset_split": "train",
-    "document_type": "monograph",
+    "document_type": "periodical",
     "date": "n/a",
     "language": "en",
     "publication_title": "n/a",
