@@ -1,0 +1,288 @@
+{
+  "document_metadata": {
+    "document_id": "icdar2017__train__en__periodical__eng_periodical-14",
+    "primary_dataset_name": "icdar2017",
+    "primary_dataset_filename": "data/prepared/icdar2017/en/train/chunks/icdar2017__train__en__periodical__eng_periodical-14__chunk_9__GT.txt",
+    "primary_dataset_doi": "https://hal.science/hal-03025499v1",
+    "primary_dataset_version": "v1.4",
+    "primary_dataset_license": "CC BY-NC-SA 4.0",
+    "benchmark_dataset_name": "impresso-ocr-bench-icdar2017",
+    "benchmark_dataset_split": "train",
+    "document_type": "periodical",
+    "date": "n/a",
+    "language": "en",
+    "publication_title": "n/a",
+    "transcription_unit_scope": "segment",
+    "segmentation_origin_article": "primary dataset digitisation campaign legacy",
+    "segmentation_origin_lines": "n/a",
+    "segmentation_origin_sentences": "auto",
+    "segmentation_origin_paragraphs": "auto",
+    "img_support_transcription_unit_iiif_url": "n/a",
+    "img_support_transcription_unit_img_filepath": "n/a"
+  },
+  "ground_truth": {
+    "transcription_unit": "We do not profess to be exact in the figures, but this is the outline of the case. Can we wonder now that a body disposed to be so profuse in its expenditure is reduced to bank-ruptcy? And as Falstaff was not only witty him-self, but the cause of wit in others, so this Eccle-siastical Commission is not only bankrupt itself, but was calculated to be, and doubtless has been, the cause of bankruptcy in others. Had they induced the clergyman whose case Lord Radnor made known to build the mansion so preposte-rously exceeding his means, he would probably by this time have been as insolvent as his dignified misleading superiors in the Commission. There was a curious ingenuity in making the two ends of extravagance meet in the instance referred to the Commissioners insisting on ad-vancing more than was necessary to compel the poor clergyman to defray more than he could afford, and entailing the further imprudence of having to keep up a house too large for his very small income. With such an example as this before us we cannot be surprised that the Com-missioners' affairs are as much embarrassed as they can be. They have, indeed, shown aptitudes for arriving at the ne plus ultra of mismanage-ment. If there had been wanted a body to show people how to live beyond their means and to ruin themselves, one better constituted for the purpose than this Ecclesiastical Commission could not have been appointed. We now see why it is that Bishops are so rich. It was happily preordained that they should be so rich to enable them to bear the management of the Ecclesiastical Commission. When we or other commands. The admirals will be put to bed at a certain hour on a fixed night, and from that time an account will be kept of their rest and activity, how long they lay in bed, how long they were rising, what period at a stretch they were able to stand on their legs without or with the aid of stick or crutches, how many yards they could see without or with glasses, what sounds, and of what loudness, they could hear without or with ear trumpets. There will be stairs as high as those of the companion stairs of a first-rate, and an exact record will be kept of the number of times a day, if any, the admirals can mount them, and of the time occupied in each enterprise. There will also be a promenade the length of a first-rate's quarter deck, and the number of turns the admirals respectively take, if any, and the time occupied, will be noted. A balance will then be struck of the different abilities and infirmities, just as with the points in which ships excel or fail. There are ships that sail ill and lie-to well, and there are admirals that do the same, and one will lie-to for a month or six weeks at a stretch without straining, head to pillow. In the log of the Experimental Hospital such entries as these will appearAugust 15th.-Signal made for admirals to get out of bed, dress, mount and walk the quarter deck, and exercise sight on the fore-top gallant sail. If an admiral in mounting the companion stairs has the misfortune to tumble, the order is, that upon that accident all shall return to their berths, and the sleeping order be resumed. On deck, if any admiral's cocked hat be carried away by stress of weather, all are to be turned down below, for fear of fresh misadventure, and the experiments cease for that day, nightcaps being resumed. The Admiralty does not mean to insist that admirals shall be able to climb to the deck and walk it, or sit it, or stand it for that matter. It would, indeed, prefer such qualifications, if attain-able but if not, and if there be the choice of an ad-miral always in bed, and one who is sometimes out of it, the Admiralty will choose the latter. So for an experimental squadron it will not require that the admiral shall be able to see to the bowsprit end without or with glasses but if it has the elec-tion of one who can see the fore-top while another can see only as far as the main-top, the Admiralty, coeteris paribus, will prefer the admiral with the superior organs of sight. The admirals in the Experimental Hospital will be allowed respectively the aid of four nurses each, to be divided into watches of the starboard and larboard nurses, and to relieve each other at the usual sarcastic mention of him as Reverend that provoked him to the retaliation of Infidel. It was thus confessedly prompted only by revenge.",
+    "line_offsets": [],
+    "sentence_offsets": [
+      [
+        0,
+        82
+      ],
+      [
+        83,
+        184
+      ],
+      [
+        185,
+        410
+      ],
+      [
+        411,
+        647
+      ],
+      [
+        648,
+        984
+      ],
+      [
+        985,
+        1119
+      ],
+      [
+        1120,
+        1207
+      ],
+      [
+        1208,
+        1415
+      ],
+      [
+        1416,
+        1462
+      ],
+      [
+        1463,
+        1589
+      ],
+      [
+        1590,
+        1616
+      ],
+      [
+        1617,
+        2053
+      ],
+      [
+        2054,
+        2277
+      ],
+      [
+        2278,
+        2453
+      ],
+      [
+        2454,
+        2581
+      ],
+      [
+        2582,
+        2762
+      ],
+      [
+        2763,
+        2981
+      ],
+      [
+        2982,
+        3165
+      ],
+      [
+        3166,
+        3370
+      ],
+      [
+        3371,
+        3510
+      ],
+      [
+        3511,
+        3714
+      ],
+      [
+        3715,
+        4051
+      ],
+      [
+        4052,
+        4341
+      ],
+      [
+        4342,
+        4391
+      ]
+    ],
+    "paragraph_offsets": [
+      [
+        0,
+        4391
+      ]
+    ],
+    "num_tokens": 972,
+    "num_chars": 4391,
+    "quality_report": {
+      "ocr_quality_score": 0.9770773610971996
+    }
+  },
+  "ocr_hypothesis": {
+    "transcription_unit": "We do not profess to be exact in the figures, but this is the outline of the case. Can we wonder now that a body disposed to be so profuse in its expenditure is reduced to bank ruptcy ? And as Falstaff was not only witty him self, but the cause of wit in others, so this Eccle siastical Commission is .not only bankrupt itself, hut was calculated to be, aud doubtless has been, the cause of bankruptcy in others. Had they induced the clergyman whose case Lord Radnor made known to build the mansion so preposte rously exceeding his means, he would probably by this time have been as insolvent as his dignified misleading superiors in the Commission. There was a curious ingenuity in making the two ends of extravagance meet in the instance referred to the Commissioners insisting on ad vancing more than was necessary to compel the poor clergyman to defray more than he could afford, and entailing the further imprudence of having to keep up a house too large for his very small income. With such an example as this before us we cannot be surprised that the Com missioners' affairs are as much embarrassed as they can be. They have, indeed, shown aptitudes for arriving at the ne plus ultra of mismanage ment. If there had been wanted a body to show people how to live beyond their means and to ruin themselves, one better constituted for the purpose than this Ecclesiastical Commission could not have been appointed. We now see why it is that Bishops are so rich. It was happily preordained that they should be so rich to enable them to bear the management of the Ecclesiastical Commission. When we or other commands. The admirals will be put to bed at a certain hour on a fixed night, and from that time an account will be kept of their rest and activity how long they lay in bed, how long they were rising, what period at a stretch they were able to stand on their legs without or with the aid of stick or crutches, how many yards they could see without or with glasses, what sounds, and of what loudnesg, they could hear without or with ear trumpets. There will be stairs as high as those of the companion stairs of a first-rate, and an exact record will be kept of the number of times a dav if any, the admirals can mount them, and of the time occupied in each enterprise. There will also be a promenade the length of a first-rate's quarter deck, and the number of turns the admirals respectively take, if any, and the time occupied, will be noted. A balance will then be struck of the different abilities and infirmities, just as with the points in which ships excel or fail. There are ships that sail ill and lie-to well, and there are admirals that do the same, and one will lie-to for a month or six weeks at a stretch without straining, head to pillow. In the log of the Experimental Hospital such eutries as these will appear -August 15th.-Signal made for admirals to get out of bed, dress, mount and walk the quarter deck, and exercise sight on the fore-top gallant sail. If an admiral in mounting the companion stairs has the misfortune to tumble, the order is, that upon that accident ail shall return to then-berths, and the sleeping order be resumed. On deck, if any admiral's cocked hat be carried away by stress of weather, all ifte to be turned down below, for fear of fresh misadventure, and the experiments cease for that day, nightcaps being resumed. The Admiralty does not mean to insist that admirals shall be able to climb to the deck and walk it, or sit it, or stand it for that matter. It would, indeed, prefer such qualifications, if attain able but if not, and if there be the choice of an ad miral always in bed, and one who is sometimes out of it, the Admiralty will choose the latter. So for an experimental squadron it will not require that the admiral shall be able to see to the bowsprit end without or with glasses but if it has the elec tion of one who can see the fore-top while another can see only as far as the main-top, the Admiralty, cceteris paribus, will prefer the admiral with the superior organs of sight. The admirals in the Experimental Hospital will be allowed respectively the aid of four nurses each, to be divided into watches of the starboard and larboard nurses, and to relieve each other at the usual sarcastic mention of him as Reverend that provoked him to the retaliation of Infidel. It was thus confessedly prompted only by revenge.",
+    "line_offsets": [],
+    "sentence_offsets": [
+      [
+        0,
+        82
+      ],
+      [
+        83,
+        185
+      ],
+      [
+        186,
+        412
+      ],
+      [
+        413,
+        649
+      ],
+      [
+        650,
+        986
+      ],
+      [
+        987,
+        1121
+      ],
+      [
+        1122,
+        1209
+      ],
+      [
+        1210,
+        1417
+      ],
+      [
+        1418,
+        1464
+      ],
+      [
+        1465,
+        1591
+      ],
+      [
+        1592,
+        1618
+      ],
+      [
+        1619,
+        2054
+      ],
+      [
+        2055,
+        2277
+      ],
+      [
+        2278,
+        2453
+      ],
+      [
+        2454,
+        2581
+      ],
+      [
+        2582,
+        2762
+      ],
+      [
+        2763,
+        2983
+      ],
+      [
+        2984,
+        3166
+      ],
+      [
+        3167,
+        3372
+      ],
+      [
+        3373,
+        3512
+      ],
+      [
+        3513,
+        3716
+      ],
+      [
+        3717,
+        4053
+      ],
+      [
+        4054,
+        4343
+      ],
+      [
+        4344,
+        4393
+      ]
+    ],
+    "paragraph_offsets": [
+      [
+        0,
+        4393
+      ]
+    ],
+    "num_tokens": 972,
+    "num_chars": 4393,
+    "quality_report": {
+      "ocr_quality_score": 0.9746478845784566,
+      "cer": 0.006604,
+      "wer": 0.044248,
+      "nb_char_substitutions": 21,
+      "nb_char_deletions": 3,
+      "nb_char_insertions": 5,
+      "alignment_score_transcription_unit": [
+        "good",
+        0.43920765027322406,
+        0.9933985886637833
+      ],
+      "alignment_score_lines": [],
+      "alignment_score_sentences": [
+        [
+          "good",
+          0.43920765027322406,
+          0.9933985886637833
+        ]
+      ],
+      "alignment_score_paragraphs": [
+        [
+          "good",
+          0.43920765027322406,
+          0.9933985886637833
+        ]
+      ]
+    }
+  },
+  "ocr_postcorrection_output": {
+    "transcription_unit": "None",
+    "ocr_postcorrection_system": "None",
+    "num_tokens": -1,
+    "num_chars": -1,
+    "quality_report": {
+      "ocr_quality_score": -1,
+      "cer": -1,
+      "wer": -1,
+      "nb_char_substitutions": -1,
+      "nb_char_deletions": -1,
+      "nb_char_insertions": -1
+    }
+  }
+}
