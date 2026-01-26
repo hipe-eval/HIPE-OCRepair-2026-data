@@ -55,7 +55,7 @@ evaluating LLM-based OCR post-correction approaches on **Impresso-OCR-Bench**, w
     - in git [releases](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases)
     - later: also on Zenodo.
 - **Release history**:
-    - 19.12.2026: [data sample](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/tree/main/data/sample).
+    - 19.12.2025: [data sample](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/tree/main/data/sample).
     - 12.01.2026: Release of JSON schema for input data and predictions.
     - 19.01.2026: Release of training and development data + scorer + JSON schema.
     - 31.03.2026: Masked test data release, start of evaluation phase.
@@ -74,7 +74,7 @@ competition website.
     - in git [releases](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases)
     - later: also on Zenodo.
 - **Release history**:
-    - 19.12.2026: [data sample](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/tree/main/data/sample).
+    - 19.12.2025: [data sample](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/tree/main/data/sample).
     - 12.01.2026: Release of JSON schema for input data and predictions.
     - 19.01.2026: Release of training and development data + scorer + JSON schema.
     - 31.03.2026: Masked test data release, start of evaluation phase.
