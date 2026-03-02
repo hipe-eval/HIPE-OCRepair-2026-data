@@ -35,15 +35,7 @@ Data is available:
 
 ### Release History
 
-| Date       | Release                                          |
-|------------|--------------------------------------------------|
-| 10.12.2025 | [Sample data](data/sample/)                      |
-| 12.01.2026 | JSON schema for input data and predictions       |
-| 02.03.2026 | Training and development data + Scorer           |
-| 06.04.2026 | Masked test data — start of evaluation phase     |
-| 08.04.2026 | Submission of system results                     |
-| 10.04.2026 | Results publication + unmasked test data release |
-
+- **02.03.2026**: release [v0.9](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9)
 
 ## Acknowledgements
 
