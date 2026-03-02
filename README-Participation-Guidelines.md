@@ -296,7 +296,8 @@ A **competition overview paper** will be compiled by the organisers and submitte
 
 ## License
 
-See per-dataset licenses on datasets individual README files.
+See per-dataset licenses on datasets individual [README files](https://github.
+com/hipe-eval/HIPE-OCRepair-2026-data/tree/main/documentation).
 
 ---
 
