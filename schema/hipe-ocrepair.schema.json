@@ -1,0 +1,353 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Impresso OCR Benchmark Document JSON Schema",
+  "type": "object",
+  "properties": {
+    "document_metadata": {
+      "type": "object",
+      "description": "Metadata about the document, including primary dataset and segmentation details.",
+      "properties": {
+        "primary_dataset_name": {
+          "type": "string",
+          "description": "The name of the primary dataset the document originates from."
+        },
+        "primary_dataset_filename": {
+          "type": "string",
+          "description": "The filename of the primary dataset."
+        },
+        "primary_dataset_doi": {
+          "type": "string",
+          "format": "uri",
+          "description": "The DOI (Digital Object Identifier) of the primary dataset."
+        },
+        "benchmark_dataset_doi": {
+          "type": "string",
+          "format": "uri",
+          "description": "The DOI (Digital Object Identifier) of the primary dataset."
+        },
+        "primary_dataset_url": {
+          "type": "string",
+          "format": "uri",
+          "description": "An URL for background information on the primary dataset (useful if missing DOI)."
+        },
+        "primary_dataset_version": {
+          "type": "string",
+          "description": "The version of the primary dataset."
+        },
+        "primary_dataset_license": {
+          "type": "string",
+          "description": "The license of the primary dataset."
+        },
+        "benchmark_dataset_name": {
+          "type": "string",
+          "description": "The name of the benchmark dataset this document belongs to."
+        },
+        "benchmark_dataset_split": {
+          "type": "string",
+          "description": "The data split of the benchmark dataset this document belongs to; used in the benchmark."
+        },
+        "document_type": {
+          "type": "string",
+          "description": "The type of the document (e.g., newspaper)."
+        },
+        "document_id": {
+          "type": "string",
+          "description": "The unique identifier for the document (taken from primary dataset)."
+        },
+        "date": {
+          "type": "string",
+          "format": "date",
+          "description": "The date of the document."
+        },
+        "language": {
+          "type": "string",
+          "description": "The language of the document."
+        },
+        "publication_title": {
+          "type": "string",
+          "description": "The title of the publication the document belongs to."
+        },
+        "transcription_unit_scope": {
+          "type": "string",
+          "description": "The scope of the transcription unit (e.g., page, article, or paragraph)."
+        },
+        "segmentation_origin_article": {
+          "type": "string",
+          "description": "Specifies the source of article segmentation, if applicable (e.g., derived from a legacy dataset digitization campaign, manually segmented, or produced by a newer system)."
+        },
+        "segmentation_origin_lines": {
+          "type": "string",
+          "description": "Specifies the source of line segmentation."
+        },
+        "segmentation_origin_sentences": {
+          "type": "string",
+          "description": "Specifies the source of sentence segmentation."
+        },
+        "segmentation_origin_paragraphs": {
+          "type": "string",
+          "description": "Specifies the source of paragraph segmentation."
+        },
+        "img_support_transcription_unit_iiif_url": {
+          "type": "string",
+          "description": "The IIIF URL for the image of the transcription unit."
+        },
+        "img_support_transcription_unit_img_filepath": {
+          "type": "string",
+          "description": "The file path for the image of the transcription unit (relative to data JSON file)."
+        }
+      },
+      "required": [
+        "primary_dataset_name",
+        "primary_dataset_version",
+        "primary_dataset_license",
+        "benchmark_dataset_name",
+        "benchmark_dataset_split",
+        "document_type",
+        "document_id",
+        "date",
+        "language",
+        "transcription_unit_scope"
+      ]
+    },
+    "ocr_hypothesis": {
+      "type": "object",
+      "description": "OCR hypothesis and related analysis results.",
+      "properties": {
+        "transcription_unit": {
+          "type": "string",
+          "description": "The OCR transcription of the unit scope in this document. This is the text to be improved by the post-ocr correction system."
+        },
+        "num_tokens": {
+          "type": "integer",
+          "description": "The number of tokens in the OCR transcription unit."
+        },
+        "num_chars": {
+          "type": "integer",
+          "description": "The number of characters in the OCR transcription unit."
+        },
+        "paragraph_offsets": {
+          "type": "array",
+          "description": "Paragraph start and end offsets, relative to the GT transcription unit.",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "line_offsets": {
+          "type": "array",
+          "description": "Line start and end offsets, relative to the GT transcription unit.",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "sentence_offsets": {
+          "type": "array",
+          "description": "Sentence start and end offsets, relative to the GT transcription unit.",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            },
+            "minItems": 2,
+            "maxItems": 2
+          }
+        },
+        "quality_report": {
+          "type": "object",
+          "description": "Automatically generated report evaluating OCR quality using substitution, insertion, deletion counts, and alignment scores (towards the ground truth).",
+          "properties": {
+            "nb_char_substitutions": {
+              "type": "integer",
+              "description": "Number of character substitutions."
+            },
+            "nb_char_deletions": {
+              "type": "integer",
+              "description": "Number of character deletions."
+            },
+            "nb_char_insertions": {
+              "type": "integer",
+              "description": "Number of character insertions."
+            },
+            "nb_char_errors": {
+              "type": "integer",
+              "description": "Total number of character errors (substitutions + deletions + insertions)."
+            },
+            "wer": {
+              "type": "number",
+              "description": "Word Error Rate (WER) of the OCR transcription."
+            },
+            "cer": {
+              "type": "number",
+              "description": "Character Error Rate (CER) of the OCR transcription."
+            },
+            "ocr_quality_score": {
+              "type": "number",
+              "description": "Overall OCR quality score obtained with https://huggingface.co/impresso-project/OCR-quality-assessment-unigram. Used internally."
+            },
+            "alignment_score_transcription_unit": {
+              "type": "array",
+              "description": "Alignment score between the transcription unit and the ground truth."
+            },
+            "alignment_score_paragraphs": {
+              "type": "array",
+              "description": "Alignment scores between each OCR paragraph and its corresponding ground truth paragraph."
+            },
+            "alignment_score_sentences": {
+              "type": "array",
+              "description": "Alignment scores between each OCR paragraph and its corresponding ground truth paragraph."
+            },
+            "alignment_score_lines": {
+              "type": "array",
+              "description": "Alignment scores between each OCR paragraph and its corresponding ground truth paragraph."
+            }
+          },
+          "required": [
+            "wer",
+            "cer"
+          ]
+        }
+      },
+      "required": [
+        "transcription_unit",
+        "num_tokens",
+        "num_chars"
+      ]
+    },
+    "ground_truth": {
+      "type": "object",
+      "description": "Ground truth data for the OCR transcription unit.",
+      "properties": {
+        "transcription_unit": {
+          "type": "string",
+          "description": "The ground truth transcription of the unit."
+        },
+        "num_tokens": {
+          "type": "integer",
+          "description": "Number of tokens in the ground truth transcription."
+        },
+        "num_chars": {
+          "type": "integer",
+          "description": "Number of characters in the ground truth transcription."
+        },
+        "quality_report": {
+          "type": "object",
+          "description": "Automatically generated report evaluating OCR quality using substitution, insertion, deletion counts, and alignment scores (towards the ground truth).",
+          "properties": {
+            "ocr_quality_score": {
+              "type": "number",
+              "description": "OCR quality score for the transcription. Used internally for the benchmark preparation. Note that there is no quality report object for the ground truth transcription."
+            }
+          }
+        },
+        "paragraph_offsets": {
+          "type": "array",
+          "description": "Paragraph offsets in the ground truth transcription.",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "line_offsets": {
+          "type": "array",
+          "description": "Line offsets in the ground truth transcription.",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        },
+        "sentence_offsets": {
+          "type": "array",
+          "description": "Sentence offsets in the ground truth transcription.",
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "integer"
+            }
+          }
+        }
+      },
+      "required": [
+        "transcription_unit",
+        "num_tokens",
+        "num_chars"
+      ]
+    },
+    "ocr_postcorrection_output": {
+      "type": "object",
+      "description": "Output of the OCR post-correction system on the OCR hypothesis.",
+      "properties": {
+        "ocr_postcorrection_system": {
+          "type": "string",
+          "description": "Alias or name of the system that produced the post-correction."
+        },
+        "transcription_unit": {
+          "type": "string",
+          "description": "The OCR transcription after post-correction."
+        },
+        "num_tokens": {
+          "type": "integer",
+          "description": "Number of tokens in the post-corrected transcription."
+        },
+        "num_chars": {
+          "type": "integer",
+          "description": "Number of characters in the post-corrected transcription."
+        },
+        "quality_report": {
+          "type": "object",
+          "description": "",
+          "properties": {
+            "nb_char_substitutions": {
+              "type": "integer",
+              "description": "Number of character substitutions of the OCR post-corrected unit."
+            },
+            "nb_char_deletions": {
+              "type": "integer",
+              "description": "Number of character deletions of the OCR post-corrected unit."
+            },
+            "nb_char_insertions": {
+              "type": "integer",
+              "description": "Number of character insertions of the OCR post-corrected unit."
+            },
+            "nb_char_errors": {
+              "type": "integer",
+              "description": "Total number of character errors (substitutions + deletions + insertions) of the OCR post-corrected unit."
+            },
+            "wer": {
+              "type": "number",
+              "description": "Word Error Rate (WER) of the OCR post-corrected unit."
+            },
+            "cer": {
+              "type": "number",
+              "description": "Character Error Rate (CER) of the OCR post-corrected unit."
+            },
+            "ocr_quality_score": {
+              "type": "number",
+              "description": "Overall OCR quality score."
+            }
+          }
+        }
+      }
+    },
+    "note": {
+      "type": "string",
+      "description": "Any additional information about the document."
+    },
+    "required": [
+      "document_metadata",
+      "ocr_hypothesis"
+    ]
+  }
+}
