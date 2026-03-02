@@ -21,7 +21,6 @@
 4. [Input/Output Format](#4-inputoutput-format)
 5. [Evaluation Campaign and System Responses](#5-evaluation-campaign-and-system-responses)
 6. [Competition Report](#6-competition-report)
-- [Appendix: Data Curation Notes](#appendix-data-curation-notes)
 
 ## 1. Introduction
 
@@ -54,10 +53,10 @@ The benchmark adopts a **semi-diplomatic transcription** approach: historical sp
 
 **HIPE-OCRepair-Bench** consolidates and harmonises multiple existing datasets alongside newly curated materials, covering historical newspapers and printed works in English, French, and German (17th–20th century). 
 
-| Dataset | Doc. Type | Origin | Period | Version | License |
-|:---|:---|:---|:---|:---|:---|
+| Dataset | Doc. Type | Origin | Period | Version | License           |
+|:---|:---|:---|:---|:---|:------------------|
 | [`icdar2017`](documentation/README-icdar-2017.md) | newspapers | existing | 17C–20C | v1.1 | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
-| [`overproof`](documentation/README-overproof.md) | newspapers | existing | 19C–20C | v1.0 | Public domain |
+| [`overproof`](documentation/README-overproof.md) | newspapers | existing | 19C–20C | v1.0 | Research use only |
 | [`impresso-nzz`](documentation/README-impresso-nzz.md) | newspapers | existing | 18C–20C | v1.1 | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
 | [`dta19`](documentation/README-dta19.md) | books | existing | 19C | v0.1 | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
 | [`impresso-snippets`](documentation/README-impresso-snippets.md) | newspapers | newly created | 19C–20C | v1.0 | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
@@ -66,7 +65,9 @@ These constituent datasets originate from diverse sources and consequently vary 
 
 In preparation for HIPE-OCRepair-2026, all datasets went through a unified curation pipeline:
 
-- **Format standardisation**: all datasets are in JSON and follow the same [JSON schema](TODO-link-to-schema);
+- **Format standardisation**: all datasets are in JSON and follow the same [JSON 
+  schema](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/blob/main/schema/hipe
+  -ocrepair.schema.json);
 - **Quality filtering**: where necessary, excessively noisy or very short documents were dismissed;
 - **Transcription unit harmonisation**: OCR text units should neither be too short (individual lines are avoided) nor excessively long aggregations of unrelated text. Where article- and paragraph-like units exist they are preserved; elsewhere, semantic chunks are computationally derived;
 - **Manual correction/verification** of GT for dev and test sets. Training sets retain original transcriptions (segmentation and formatting harmonisation only).
