@@ -13,17 +13,18 @@ The competition addresses this by providing **HIPE-OCRepair-Bench**, a unified m
 
 ## 📋 Participation Guidelines
 
-All information about the task, datasets, evaluation protocol, and submission instructions is available in the **[Participation Guidelines](documentation/participation-guidelines.md)**.
+All information about the task, datasets, evaluation protocol, and submission instructions is available in the **[Participation Guidelines](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/blob/data-guidelines-release/README-Participation-Guidelines.md)**.
 
 ## 🔗 Key Links
 
-| | |
-|---|---|
-| 🌐 Competition website | https://hipe-eval.github.io/HIPE-OCRepair-2026/ |
-| 📋 Participation Guidelines | [documentation/participation-guidelines.md](documentation/participation-guidelines.md) |
-| 📊 Evaluation repository | https://github.com/hipe-eval/HIPE-OCRepair-2026-eval |
-| 🏆 Leaderboard | https://huggingface.co/spaces/hipe-ocrepair-2026-eval |
-| 📝 Registration & contact | see competition website |
+|                                              | |
+|----------------------------------------------|---|
+| 🌐 Competition website                       | https://hipe-eval.github.io/HIPE-OCRepair-2026/ |
+| 📋 Participation Guidelines                  | [documentation/participation-guidelines.md](documentation/participation-guidelines.md) |
+| 📈 Scorer                                    | [https://github.com/hipe-eval/HIPE-OCRepair-scorer](https://github.com/hipe-eval/HIPE-OCRepair-scorer)|
+| 📊 Evaluation repository (after competition) | https://github.com/hipe-eval/HIPE-OCRepair-2026-eval |
+| 🏆 Leaderboard (to come)                     | https://huggingface.co/spaces/hipe-ocrepair-2026-eval |
+| 📝 Registration & contact                    | see competition website |
 
 ## 📦 Data
 
