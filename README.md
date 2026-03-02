@@ -10,27 +10,25 @@ A central question motivating this competition is:
 
 The competition addresses this by providing **HIPE-OCRepair-Bench**, a unified multilingual benchmark for OCR post-correction, comprising curated datasets, an evaluation protocol, baseline systems, and an open leaderboard.
 
-
 ## 📋 Participation Guidelines
 
 All information about the task, datasets, evaluation protocol, and submission instructions is available in the **[Participation Guidelines](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/blob/data-guidelines-release/README-Participation-Guidelines.md)**.
 
-## 🔗 Key Links
+## 🔗 Important Links
 
-|                                              | |
-|----------------------------------------------|---|
-| 🌐 Competition website                       | https://hipe-eval.github.io/HIPE-OCRepair-2026/ |
-| 📋 Participation Guidelines                  | [documentation/participation-guidelines.md](documentation/participation-guidelines.md) |
-| 📈 Scorer                                    | [https://github.com/hipe-eval/HIPE-OCRepair-scorer](https://github.com/hipe-eval/HIPE-OCRepair-scorer)|
-| 📊 Evaluation repository (after competition) | https://github.com/hipe-eval/HIPE-OCRepair-2026-eval |
-| 🏆 Leaderboard (to come)                     | https://huggingface.co/spaces/hipe-ocrepair-2026-eval |
-| 📝 Registration & contact                    | see competition website |
+|                                              |                                                                                                        |
+|----------------------------------------------|--------------------------------------------------------------------------------------------------------|
+| 🌐 Competition website                       | https://hipe-eval.github.io/HIPE-OCRepair-2026/                                                        |
+| 📋 Participation Guidelines                  | [README-Participation-Guidelines.md](README-Participation-Guidelines.md)                               |
+| 📈 Scorer                                    | [https://github.com/hipe-eval/HIPE-OCRepair-scorer](https://github.com/hipe-eval/HIPE-OCRepair-scorer) |
+| 📊 Evaluation repository (after competition) | https://github.com/hipe-eval/HIPE-OCRepair-2026-eval                                                   |
+| 🏆 Leaderboard (to come)                     | https://huggingface.co/spaces/hipe-ocrepair-2026-eval                                                  |
+| 📝 Registration & contact                    | see competition website                                                                                |
 
 ## 📦 Data
 
 Data is available:
-- in the [data/](data/) folder of this repository
-    - in git [releases](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases)
+- in the [data/](data/) folder of this repository and in the git [releases](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases)
 - later: also on Zenodo
 
 ### Release History
