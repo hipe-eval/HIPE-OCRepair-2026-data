@@ -148,17 +148,17 @@ These transformations can be applied to training data without affecting evaluati
 
 ###  3.6 Splits
 
-| Dataset | Lang | Train | Dev | Test | Competition Test* | Split Origin                            |
-|:---|:-----|:-----:|:---:|:---:|:---:|:---|
+| Dataset | Lang | Train | Dev | Test | Competition Test* | Split Origin                                 |
+|:---|:-----|:-----:|:---:|:---:|:---:|:---------------------------------------------|
 | `icdar2017` | en   |  455  | 188 | TBD | ✓ | original train→train+dev; original test→test |
-| `icdar2017` | fr   |  391  | — | 230 | ✓ | original train→train; original test→test |
-| `overproof` | en   |  145  | 31 | 32 | — | no original split; new splits over SMH+CA |
-| `impresso-nzz` | de   | TBD** | — | TBD |         —         | original splits                         |
-| `dta19` (noise 1) | de   |  TBD  | TBD | TBD |         ✓         | new splits                              |
-| `dta19` (noise 2) | de   |  TBD  | TBD | TBD |         ✓         | new splits                              |
-| `impresso-snippets` | fr   |  TBD  | TBD | TBD |         ✓         | new splits                              |
-| `impresso-snippets` | de   |  TBD  | TBD | TBD |         ✓         | new splits                              |
-| `impresso-snippets` | en    |  TBD  | TBD | TBD |         ✓         | new splits                              |
+| `icdar2017` | fr   |  391  | — | 230 | ✓ | original train→train; original test→test     |
+| `overproof` | en   |  145  | 31 | 32 | — | no original split; new splits over SMH+CA    |
+| `impresso-nzz` | de   | TBD** | — | TBD |         —         | original splits                              |
+| `dta19` (noise 1) | de   |  TBD  | TBD | TBD |         ✓         | new splits (available around 5.03.2026)      |
+| `dta19` (noise 2) | de   |  TBD  | TBD | TBD |         ✓         | new splits  (available around 5.03.2026)     |
+| `impresso-snippets` | fr   |  TBD  | TBD | TBD |         ✓         | new splits                                   |
+| `impresso-snippets` | de   |  TBD  | TBD | TBD |         ✓         | new splits                                   |
+| `impresso-snippets` | en    |  TBD  | TBD | TBD |         ✓         | new splits                                   |
 
 (*) ✓ = used as official competition test set; — = available for training/evaluation but not part of the official competition ranking.
 (**) numbers will be completed soon.
