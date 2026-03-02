@@ -95,7 +95,7 @@ Each original dataset has a given document granularity that was either preserved
 | `overproof` | en | newspaper article                 | **article**                  |            —            | ✓ | — |
 | `impresso-nzz` | de | newspaper page                    | **page**                     |            ✓            | ✓ | ✓ |
 | `dta19` | de | book page                         | **page**                     |            ✓            | — | — |
-| `impresso-snippets` | fr, de | newspaper paragraph               | **newspaper paragraph**      |            ✓            | — | — |
+| `impresso-snippets` | fr, de, en | newspaper paragraph               | **newspaper paragraph**      |            ✓            | — | — |
 
 
 **Important:** Systems must correct the text in the `transcription_unit` field only. Sub-segmentation information (lines, sentences, chunks) is provided for reference and may optionally be used as context, but is not the target of evaluation.
@@ -114,7 +114,7 @@ Each original dataset either retains or discards layout information such as line
 | `overproof` | ✓ | ✓ | — | — | — | ✓ |
 | `impresso-nzz` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
 | `dta19` | TBD | TBD | — | — | TBD | TBD |
-| `impresso-snippets` | ✓ | ✓ | — | — | ✓ | ✓ |
+| `impresso-snippets` | ✓ | ✓ | — | — | - | ✓ |
 
 > **Note on `overproof`:** soft hyphens are present in the GT but not in the OCR. This reflects the fact that the original OCR output did not encode hyphenation, while the ground truth was reconstructed with explicit soft hyphen markers during curation.
 
