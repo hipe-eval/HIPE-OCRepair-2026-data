@@ -8,9 +8,9 @@
 |-------------------------------------|---|
 | 🌐 Competition website              | https://hipe-eval.github.io/HIPE-OCRepair-2026/ |
 | 📦 Data repository                  | https://github.com/hipe-eval/HIPE-OCRepair-2026-data |
-| 📈 HIPE-OCRepair-scorer repository | https://github.com/hipe-eval/HIPE-OCRepair-scorer/) |
+| 📈 HIPE-OCRepair-scorer repository  | https://github.com/hipe-eval/HIPE-OCRepair-scorer/) |
 | 📊 Evaluation repository            | https://github.com/hipe-eval/HIPE-OCRepair-2026-eval |
-| 🏆 Leaderboard                      | https://huggingface.co/spaces/hipe-ocrepair-2026-eval |
+| 🏆 Leaderboard  (to come)           | https://huggingface.co/spaces/hipe-ocrepair-2026-eval |
 | 📝 Registration, timeline & contact | see competition website |
 
 ## Contents
