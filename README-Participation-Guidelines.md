@@ -1,17 +1,18 @@
 # ICDAR HIPE-OCRepair-2026: Participation Guidelines
+
 **Competition on LLM-Assisted OCR Post-Correction for Historical Documents**  
-*v.2026-03-01 — HIPE-OCRepair-2026 Team*
+_v.2026-03-01 — HIPE-OCRepair-2026 Team_
 
 ## Useful Links
 
-|                                     | |
-|-------------------------------------|---|
-| 🌐 Competition website              | https://hipe-eval.github.io/HIPE-OCRepair-2026/ |
-| 📦 Data repository                  | https://github.com/hipe-eval/HIPE-OCRepair-2026-data |
-| 📈 HIPE-OCRepair-scorer repository  | https://github.com/hipe-eval/HIPE-OCRepair-scorer/) |
-| 📊 Evaluation repository            | https://github.com/hipe-eval/HIPE-OCRepair-2026-eval |
-| 🏆 Leaderboard  (to come)           | https://huggingface.co/spaces/hipe-ocrepair-2026-eval |
-| 📝 Registration, timeline & contact | see competition website |
+|                                     |                                                       |
+| ----------------------------------- | ----------------------------------------------------- |
+| 🌐 Competition website              | https://hipe-eval.github.io/HIPE-OCRepair-2026/       |
+| 📦 Data repository                  | https://github.com/hipe-eval/HIPE-OCRepair-2026-data  |
+| 📈 HIPE-OCRepair-scorer repository  | https://github.com/hipe-eval/HIPE-OCRepair-scorer/)   |
+| 📊 Evaluation repository            | https://github.com/hipe-eval/HIPE-OCRepair-2026-eval  |
+| 🏆 Leaderboard (to come)            | https://huggingface.co/spaces/hipe-ocrepair-2026-eval |
+| 📝 Registration, timeline & contact | see competition website                               |
 
 ## Contents
 
@@ -24,19 +25,19 @@
 
 ## 1. Introduction
 
-HIPE-OCRepair-2026 is an [ICDAR 2026 Competition](https://icdar2026.org/index.php/competitions/) focused on **LLM-assisted OCR post-correction of historical documents**. 
+HIPE-OCRepair-2026 is an [ICDAR 2026 Competition](https://icdar2026.org/index.php/competitions/) focused on **LLM-assisted OCR post-correction of historical documents**.
 
 Despite advances in OCR technology, historical documents remain difficult to digitize accurately. Many institutions lack the resources to re-OCR millions of legacy pages, making **post-correction the primary path to improving OCR quality**. The rise of LLMs has opened new possibilities, but results across languages and error types remain inconsistent and hard to compare.
 
 A central question motivating this competition is:
 
-> *To what extent can modern large language models address the OCR debt accumulated in large-scale digitized historical collections?*
+> _To what extent can modern large language models address the OCR debt accumulated in large-scale digitized historical collections?_
 
 The competition aims to address this by providing **HIPE-OCRepair-Bench**, a unified multilingual benchmark for OCR post-correction, comprising curated datasets, an evaluation protocol, baseline systems, and an open leaderboard.
 
 ## 2. Task Definition
 
-Participant teams correct **noisy OCR transcripts from historical documents** without 
+Participant teams correct **noisy OCR transcripts from historical documents** without
 access to source images. For each text chunk (typically a paragraph or article), the input includes:
 
 - the OCR hypothesis (erroneous transcription)
@@ -51,15 +52,15 @@ The benchmark adopts a **semi-diplomatic transcription** approach: historical sp
 
 ### 3.1 Overview
 
-**HIPE-OCRepair-Bench** consolidates and harmonises multiple existing datasets alongside newly curated materials, covering historical newspapers and printed works in English, French, and German (17th–20th century). 
+**HIPE-OCRepair-Bench** consolidates and harmonises multiple existing datasets alongside newly curated materials, covering historical newspapers and printed works in English, French, and German (17th–20th century).
 
-| Dataset | Doc. Type | Origin | Period | Version | License           |
-|:---|:---|:---|:---|:---|:------------------|
-| [`icdar2017`](documentation/README-icdar-2017.md) | newspapers | existing | 17C–20C | v1.1 | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
-| [`overproof`](documentation/README-overproof.md) | newspapers | existing | 19C–20C | v1.0 | Research use only |
-| [`impresso-nzz`](documentation/README-impresso-nzz.md) | newspapers | existing | 18C–20C | v1.1 | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
-| [`dta19`](documentation/README-dta19.md) | books | existing | 19C | v0.1 | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/) |
-| [`impresso-snippets`](documentation/README-impresso-snippets.md) | newspapers | newly created | 19C–20C | v1.0 | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| Dataset                                                          | Doc. Type  | Origin        | Period  | Version | License                                                               |
+| :--------------------------------------------------------------- | :--------- | :------------ | :------ | :------ | :-------------------------------------------------------------------- |
+| [`icdar2017`](documentation/README-icdar-2017.md)                | newspapers | existing      | 17C–20C | v1.1    | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
+| [`overproof`](documentation/README-overproof.md)                 | newspapers | existing      | 19C–20C | v1.0    | Research use only                                                     |
+| [`impresso-nzz`](documentation/README-impresso-nzz.md)           | newspapers | existing      | 18C–20C | v1.1    | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)       |
+| [`dta19`](documentation/README-dta19.md)                         | books      | existing      | 19C     | v0.1    | [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/)       |
+| [`impresso-snippets`](documentation/README-impresso-snippets.md) | newspapers | newly created | 19C–20C | v1.0    | [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/) |
 
 These constituent datasets originate from diverse sources and consequently vary in their original transcription policies, file formats, and degree of layout awareness (i.e. how much layout information — line breaks, hyphenation — is retained in the encoding).
 
@@ -88,14 +89,13 @@ The benchmark reflects the diversity and complexity of real historical OCR data.
 
 Each original dataset has a given document granularity that was either preserved or transformed into a new transcription unit, and optionally complemented with additional segmentation levels — sentences and semantic chunks — computed automatically. If present, these are provided as character offsets relative to the `transcription_unit` text. Line-level segmentation, where available in the original data, is likewise provided as character offsets.
 
-| Dataset | Lang | Original Granularity | Benchmark Transcription Unit | Line Offsets | Sentence Offsets | Chunk Offsets |
-|:---|:---|:---|:---|:---:|:---:|:---:|
-| `icdar2017` | en, fr | very long concatenated document | **semantic chunk** | — | ✓ | ✓ |
-| `overproof` | en | newspaper article                 | **article**                  |            —            | ✓ | — |
-| `impresso-nzz` | de | newspaper page                    | **page**                     |            ✓            | ✓ | ✓ |
-| `dta19` | de | book page                         | **page**                     |            ✓            | — | — |
-| `impresso-snippets` | fr, de, en | newspaper paragraph               | **newspaper paragraph**      |            ✓            | — | — |
-
+| Dataset             | Lang       | Original Granularity            | Benchmark Transcription Unit | Line Offsets | Sentence Offsets | Chunk Offsets |
+| :------------------ | :--------- | :------------------------------ | :--------------------------- | :----------: | :--------------: | :-----------: |
+| `icdar2017`         | en, fr     | very long concatenated document | **semantic chunk**           |      —       |        ✓         |       ✓       |
+| `overproof`         | en         | newspaper article               | **article**                  |      —       |        ✓         |       —       |
+| `impresso-nzz`      | de         | newspaper page                  | **page**                     |      ✓       |        ✓         |       ✓       |
+| `dta19`             | de         | book page                       | **page**                     |      ✓       |        —         |       —       |
+| `impresso-snippets` | fr, de, en | newspaper paragraph             | **newspaper paragraph**      |      ✓       |        —         |       —       |
 
 **Important:** Systems must correct the text in the `transcription_unit` field only. Sub-segmentation information (lines, sentences, chunks) is provided for reference and may optionally be used as context, but is not the target of evaluation.
 
@@ -107,13 +107,13 @@ Each original dataset either retains or discards layout information such as line
 - **paragraph breaks** (`\n\n`): only present where the transcription unit itself spans multiple paragraphs;
 - **soft hyphens** (`¬\n`): only present where the original data had line-break hyphenation information, or where newly introduced during curation of the ground truth.
 
-| Dataset | Line breaks in OCR | Line breaks in GT | Para breaks in OCR | Para breaks in GT | Soft hyphens in OCR | Soft hyphens in GT |
-|:---|:---:|:---:|:---:|:---:|:---:|:---:|
-| `icdar2017` | — | — | — | — | — | — |
-| `overproof` | ✓ | ✓ | — | — | — | ✓ |
-| `impresso-nzz` | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| `dta19` | TBD | TBD | — | — | TBD | TBD |
-| `impresso-snippets` | ✓ | ✓ | — | — | - | ✓ |
+| Dataset             | Line breaks in OCR | Line breaks in GT | Para breaks in OCR | Para breaks in GT | Soft hyphens in OCR | Soft hyphens in GT |
+| :------------------ | :----------------: | :---------------: | :----------------: | :---------------: | :-----------------: | :----------------: |
+| `icdar2017`         |         —          |         —         |         —          |         —         |          —          |         —          |
+| `overproof`         |         ✓          |         ✓         |         —          |         —         |          —          |         ✓          |
+| `impresso-nzz`      |         ✓          |         ✓         |         ✓          |         ✓         |          ✓          |         ✓          |
+| `dta19`             |        TBD         |        TBD        |         —          |         —         |         TBD         |        TBD         |
+| `impresso-snippets` |         ✓          |         ✓         |         —          |         —         |          -          |         ✓          |
 
 > **Note on `overproof`:** soft hyphens are present in the GT but not in the OCR. This reflects the fact that the original OCR output did not encode hyphenation, while the ground truth was reconstructed with explicit soft hyphen markers during curation.
 
@@ -125,43 +125,42 @@ Each original dataset either retains or discards layout information such as line
 - `-\n` → `"-"` (hard hyphen preserved; layout break removed)
 - `\n` → `" "` (remaining line breaks converted to spaces)
 
-These transformations can be applied to training data without affecting evaluation scores. See the [normalise_layout() function](TODO-link-to-eval-repo) in the evaluation repository.
+These transformations can be applied to training data without affecting evaluation scores. See the [normalise_layout() function](https://github.com/hipe-eval/HIPE-OCRepair-scorer/blob/main/hipe_ocrepair_scorer/utils/normalisation.py) in the evaluation repository.
 
 ### 3.5 OCR Source, GT Quality and Filtering
 
-**Note on `dta19`**: There was no OCR hypothesis in the original data (only images 
+**Note on `dta19`**: There was no OCR hypothesis in the original data (only images
 and GT). The OCR hypothesis was generated by artificially introducing noise into the original images at two intensity levels, starting from a clean manual GT.
 
-| Dataset | Lang | OCR Engine | Avg CER (train) | Avg CER (dev) | Avg CER (test) | CER Filter | GT Source | GT Correction Status |
-|:---|:---|:---|:---:|:---:|:---:|:---|:---|:---|
-| `icdar2017` | en | various | 0.038 | 0.042 | TBD | > 0.15 removed | IMPACT project (manual) | train: original; dev/test: corrected |
-| `icdar2017` | fr | various | 0.038 | TBD | 0.028 | > 0.15 removed | IMPACT project (manual) | train: original; dev/test: corrected |
-| `overproof` | en | ABBYY | 0.083 | TBD | TBD | > 0.15 removed | crowdsourced (Trove) + manual | train: original; dev/test: corrected |
-| `impresso-nzz` | de | ABBYY FineReader Server 11 | TBD | — | TBD | none | manual | train: original; test: corrected |
-| `dta19` (noise 1) | de | artificially degraded (level 1) | TBD | TBD | TBD | none | manual (DTA) | train: original; dev/test: corrected |
-| `dta19` (noise 2) | de | artificially degraded (level 2) | TBD | TBD | TBD | none | manual (DTA) | train: original; dev/test: corrected |
-| `impresso-snippets` | fr,de,en | various                                                        | TBD | TBD | TBD | > 0.15 removed| manual (Impresso) | newly created |
+| Dataset             | Lang     | OCR Engine                      | Avg CER (train) | Avg CER (dev) | Avg CER (test) | CER Filter     | GT Source                     | GT Correction Status                 |
+| :------------------ | :------- | :------------------------------ | :-------------: | :-----------: | :------------: | :------------- | :---------------------------- | :----------------------------------- |
+| `icdar2017`         | en       | various                         |      0.038      |     0.042     |      TBD       | > 0.15 removed | IMPACT project (manual)       | train: original; dev/test: corrected |
+| `icdar2017`         | fr       | various                         |      0.038      |      TBD      |     0.028      | > 0.15 removed | IMPACT project (manual)       | train: original; dev/test: corrected |
+| `overproof`         | en       | ABBYY                           |      0.083      |      TBD      |      TBD       | > 0.15 removed | crowdsourced (Trove) + manual | train: original; dev/test: corrected |
+| `impresso-nzz`      | de       | ABBYY FineReader Server 11      |       TBD       |       —       |      TBD       | none           | manual                        | train: original; test: corrected     |
+| `dta19` (noise 1)   | de       | artificially degraded (level 1) |       TBD       |      TBD      |      TBD       | none           | manual (DTA)                  | train: original; dev/test: corrected |
+| `dta19` (noise 2)   | de       | artificially degraded (level 2) |       TBD       |      TBD      |      TBD       | none           | manual (DTA)                  | train: original; dev/test: corrected |
+| `impresso-snippets` | fr,de,en | various                         |       TBD       |      TBD      |      TBD       | > 0.15 removed | manual (Impresso)             | newly created                        |
 
+### 3.6 Splits
 
+| Dataset             | Lang |  Train  | Dev | Test | Competition Test\* | Split Origin                                 |
+| :------------------ | :--- | :-----: | :-: | :--: | :----------------: | :------------------------------------------- |
+| `icdar2017`         | en   |   455   | 188 | TBD  |         ✓          | original train→train+dev; original test→test |
+| `icdar2017`         | fr   |   391   |  —  | 230  |         ✓          | original train→train; original test→test     |
+| `overproof`         | en   |   145   | 31  |  32  |         —          | no original split; new splits over SMH+CA    |
+| `impresso-nzz`      | de   | TBD\*\* |  —  | TBD  |         —          | original splits                              |
+| `dta19` (noise 1)   | de   |   TBD   | TBD | TBD  |         ✓          | new splits (available around 5.03.2026)      |
+| `dta19` (noise 2)   | de   |   TBD   | TBD | TBD  |         ✓          | new splits (available around 5.03.2026)      |
+| `impresso-snippets` | fr   |   50    | 10  | 100  |         ✓          | new splits                                   |
+| `impresso-snippets` | de   |   50    | 10  | 100  |         ✓          | new splits                                   |
+| `impresso-snippets` | en   |   50    | 10  | 100  |         ✓          | new splits                                   |
 
-###  3.6 Splits
-
-| Dataset | Lang | Train | Dev | Test | Competition Test* | Split Origin                                 |
-|:---|:-----|:-----:|:---:|:---:|:---:|:---------------------------------------------|
-| `icdar2017` | en   |  455  | 188 | TBD | ✓ | original train→train+dev; original test→test |
-| `icdar2017` | fr   |  391  | — | 230 | ✓ | original train→train; original test→test     |
-| `overproof` | en   |  145  | 31 | 32 | — | no original split; new splits over SMH+CA    |
-| `impresso-nzz` | de   | TBD** | — | TBD |         —         | original splits                              |
-| `dta19` (noise 1) | de   |  TBD  | TBD | TBD |         ✓         | new splits (available around 5.03.2026)      |
-| `dta19` (noise 2) | de   |  TBD  | TBD | TBD |         ✓         | new splits  (available around 5.03.2026)     |
-| `impresso-snippets` | fr   |  50  | 10 | 100 |         ✓         | new splits                                   |
-| `impresso-snippets` | de   |  50  | 10 | 100 |         ✓         | new splits                                   |
-| `impresso-snippets` | en    |  50  | 10 | 100 |         ✓         | new splits                                   |
-
-(*) ✓ = used as official competition test set; — = available for training/evaluation but not part of the official competition ranking.
-(**) numbers will be completed soon.
+(\*) ✓ = used as official competition test set; — = available for training/evaluation but not part of the official competition ranking.
+(\*\*) numbers will be completed soon.
 
 ## 4. Input/Output Format
+
 Each document in the benchmark follows a common JSON schema with four top-level fields:
 
 - **`document_metadata`** — provenance and contextual information: dataset name, version, license, document ID, language, date, publication title, transcription unit scope, and segmentation origins. Also includes optional image links (IIIF URL or file path).
@@ -172,14 +171,14 @@ Each document in the benchmark follows a common JSON schema with four top-level 
 
 - **`ocr_postcorrection_output`** — the field to be filled by participant systems. Contains the corrected transcription (`transcription_unit`) and an optional system identifier. A `quality_report` is computed by the scorer after submission.
 
-The schema is available in the [data repository](TODO-link-to-schema).
+The schema is available in the [data repository](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/blob/main/schema/hipe-ocrepair.schema.json).
 
 Documents are serialised in **JSON Lines** (`.jsonl`) files.
 
 The key fields for participants are:
-- `ocr_hypothesis`: the OCR text to correct. 
-- `ocr_postcorrection_output`: where systems must fill in their response, leaving all other fields unchanged.
 
+- `ocr_hypothesis`: the OCR text to correct.
+- `ocr_postcorrection_output`: where systems must fill in their response, leaving all other fields unchanged.
 
 ### File Naming and Releases
 
@@ -190,7 +189,6 @@ hipe-ocrepair-bench_<version>_<dataset>_<split>_<language>.jsonl
 ```
 
 Data is available on GitHub and Hugging Face. Each release has a corresponding git tag with release notes. **Test set ground truth is masked in released files** and published after the evaluation phase ends.
-
 
 ## 5. Evaluation Campaign and System Responses
 
@@ -207,18 +205,20 @@ For each document in the test file, fill the `ocr_postcorrection_output` field. 
 
 **File naming:** `teamname_<inputfilename>_runX.jsonl` (where `runX` ∈ {`run1`, `run2`, `run3`})
 
-Submit a single ZIP archive via the Hugging Face leaderboard (see [submission instructions](TODO-link)).
+Submit a single ZIP archive (see [submission instructions](https://hipe-eval.github.io/HIPE-OCRepair-2026/)).
 
 ### 5.3 Pre-processing Before Scoring
 
 Two normalisation steps are applied sequentially to both system output and ground truth before metric computation:
 
 **Step 1 — Layout normalisation:**
+
 - `¬\n` (soft hyphen + line break) → `""` (removed; word parts joined)
 - `-\n` (hard hyphen + line break) → `"-"` (hyphen preserved; line break removed)
 - `\n` (remaining line breaks) → `" "` (converted to space)
 
 **Step 2 — Whitespace normalisation:**
+
 - Multiple consecutive whitespace characters collapsed to a single space
 - Leading and trailing whitespace removed
 
@@ -246,7 +246,7 @@ A sign-based score computed per document and then **macro-averaged** (unweighted
 s_i = sign(cMER_in,i − cMER_out,i) ∈ {+1, 0, −1}; 0 iff cMER_in,i = cMER_out,i
 ```
 
-A score of +1 means the system improved over the input OCR, 0 means no change, −1 means degradation. The mean preference score captures the *consistency* of improvement across documents, complementing the *magnitude* measured by cMER. Because it is sign-based and macro-averaged, each document contributes equally regardless of length, large gains on a few documents cannot dominate the score, and effect size is ignored, making it complementary to magnitude-based cMER rather than redundant.
+A score of +1 means the system improved over the input OCR, 0 means no change, −1 means degradation. The mean preference score captures the _consistency_ of improvement across documents, complementing the _magnitude_ measured by cMER. Because it is sign-based and macro-averaged, each document contributes equally regardless of length, large gains on a few documents cannot dominate the score, and effect size is ignored, making it complementary to magnitude-based cMER rather than redundant.
 
 #### Additional Metrics
 
@@ -258,11 +258,13 @@ A score of +1 means the system improved over the input OCR, 0 means no change, �
 Two normalisation steps are applied sequentially to both system output and ground truth before metric computation:
 
 **Step 1 — Layout normalisation:**
+
 - `\n` (line break) → space
 - `¬\n` (soft hyphen + line break) → removed (word parts joined)
 - `-` (hard hyphen) → preserved
 
 **Step 2 — Whitespace normalisation:**
+
 - Multiple consecutive whitespace characters collapsed to a single space
 - Leading and trailing whitespace removed
 
@@ -275,6 +277,7 @@ Results are reported per dataset and then averaged across datasets. Stratificati
 ### 5.5 Scoring Tools
 
 The evaluation repository provides:
+
 - a **JSON schema validator** — verify your file format before submission
 - a **[scorer](https://github.com/hipe-eval/HIPE-OCRepair-scorer/)** — compute cMER, wMER, and preference score locally
 
@@ -292,12 +295,10 @@ A **competition overview paper** will be compiled by the organisers and submitte
 
 ## License
 
-See per-dataset licenses on datasets individual [README files](https://github.
-com/hipe-eval/HIPE-OCRepair-2026-data/tree/main/documentation).
+See per-dataset licenses on datasets individual [README files](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/tree/main/documentation).
 
 ---
 
 ## Acknowledgments
 
 The HIPE-OCRepair-2026 organising team expresses its sincere appreciation to the ICDAR 2026 Conference and Competition Committee for hosting the task. HIPE-eval editions are organised within the framework of the [Impresso – Media Monitoring of the Past](https://impresso-project.ch) project, funded by the Swiss National Science Foundation under grant No. CRSII5_213585 and by the Luxembourg National Research Fund under grant No. 17498891.
-
