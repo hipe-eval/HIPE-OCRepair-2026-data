@@ -83,31 +83,30 @@ The HIPE-OCRepair conversion process involves:
    - Paragraph offsets: Extracted from PAGE XML regions
 5. **Alignment**: Sentence offsets computed for ground truth, then mapped to corresponding OCR text (line-aligned)
 6. **Quality Metrics**: CER, WER, OCR-QA scores, and alignment quality scores computed
-7. **Data Splits**: Train and test splits based on original dataset structure
+7. **Data Splits**: Train and test splits based on original splits.
 
 ### Benchmark Characteristics
 
-| Property | Value                                                                                                                                             |
-|:---------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
-| **Benchmark Name** | `impresso-nzz`                                                                                                                                    |
-| **Version** | v0.9                                                                                                                                              |
-| **Components** | Filtered pages from NZZ black letter corpus (1780–1947)                                                                                           |
-| **Exclusions** | Pages with structural misalignments                                                                                                               |
-| **Languages** | German (Fraktur)                                                                                                                                  |
+| Property                 | Value                                                                                                                                             |
+|:-------------------------|:--------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Benchmark Name**       | `impresso-nzz`                                                                                                                                    |
+| **Version**              | v0.9                                                                                                                                              |
+| **Components**           | Filtered pages from NZZ black letter corpus (1780–1947)                                                                                           |
+| **Exclusions**           | Pages with structural misalignments                                                                                                               |
+| **Languages**            | German (Fraktur)                                                                                                                                  |
 | **Document Granularity** | Page (newspaper front page)                                                                                                                       |
-| **Format** | JSON Lines (.jsonl)                                                                                                                               |
-| **Schema** | [hipe-ocrepair.schema.json](https://github.com/hipe-eval/HIPE-OCRepair-scorer/blob/main/data/schema/hipe-ocrepair.schema.json)                    |
-| **License** | [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/) |
-| **Segmentation Levels** | Lines, sentences, paragraphs (regions), semantic chunks                                                                                           |
-| **Offset Format** | Character positions `[start, end]` in transcription_unit text                                                                                     |
-| **Text Processing** | Ligature normalization (ß retained), whitespace normalization at line level                                                                       |
-| **Line Breaks in Text** | Preserved with `\n` (between lines) and `\n\n` (between regions)                                                                                  |
-| **Layout Preservation** | Full layout preserved in transcription_unit text                                                                                                  |
-| **Data Splits** | Train and Test                                                                                                                                    |
-| **Split Strategy** | Based on original dataset structure                                                                                                               |
-| **Split Level** | Page                                                                                                                                              |
-| **Quality Metrics** | CER, WER, OCR-QA score, alignment quality scores                                                                                                  |
-| **Image Links** | _after the competition_                                                                                                                           |
+| **Format**               | JSON Lines (.jsonl)                                                                                                                               |
+| **Schema**               | [hipe-ocrepair.schema.json](https://github.com/hipe-eval/HIPE-OCRepair-scorer/blob/main/data/schema/hipe-ocrepair.schema.json)                    |
+| **License**              | [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC%20BY--NC%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/) |
+| **Segmentation Levels**  | Lines, sentences, paragraphs (regions), semantic chunks                                                                                           |
+| **Offset Format**        | Character positions `[start, end]` in transcription_unit text                                                                                     |
+| **Text Normalisation**   | Ligature normalization, whitespace normalization at line level                                                                                    |
+| **Line Breaks in Text**  | Preserved with `\n` (between lines) and `\n\n` (between regions)                                                                                  |
+| **Data Splits**          | Train and Test                                                                                                                                    |
+| **Split Strategy**       | Based on original dataset structure                                                                                                               |
+| **Split Level**          | Page                                                                                                                                              |
+| **Quality Metrics**      | CER, WER, OCR-QA score, alignment quality scores (the latter internal use)                                                                        |
+| **Image Links**          | _after the competition_                                                                                                                           |
 
 ### Dataset Statistics
 

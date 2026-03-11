@@ -57,28 +57,27 @@ _To be completed with benchmark processing description_
 
 ### Benchmark Characteristics
 
-| Property | Value                                                                                                                                          |
-|:---------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
-| **Benchmark Name** | `dta19`                                                                                                                                        |
-| **Version** | _To be completed_                                                                                                                              |
-| **Components** | page samples from the 39 books                                                                                                                 |
-| **Exclusions** | Only a sample of pages are retained from each book                                                                                             |
-| **Languages** | German                                                                                                                                         |
-| **Document Granularity** | page                                                                                                                                           |
-| **Format** | JSON Lines (.jsonl)                                                                                                                            |
-| **Schema** | [hipe-ocrepair.schema.json](https://github.com/hipe-eval/HIPE-OCRepair-scorer/blob/main/data/schema/hipe-ocrepair.schema.json)                                                                |
-| **License** | [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/) |
-| **Benchmark DOI** | [https://doi.org/10.5281/zenodo.18824344](https://doi.org/10.5281/zenodo.18824344) |
-| **Segmentation Levels** | chunk, sentence, line                                                                                                                          |
-| **Offset Format** | Character positions `[start, end]` in transcription_unit text                                                                                  |
-| **Text Processing** | _To be completed_                                                                                                                              |
-| **Line Breaks in Text** | _To be completed_                                                                                                                              |
-| **Layout Preservation** | _To be completed_                                                                                                                              |
-| **Data Splits** | Train, Dev, and Test                                                                                                           |
-| **Split Strategy** | Each split contains a fix set of books (no book spanning several splits); first and last pages excluded; random sample. Test set pages manually curated to remove truncated sentences at page boundaries.                        |
-| **Split Level** | page                                                                                                                           |
-| **Quality Metrics** | CER, WER, OCR-QA score, alignment quality scores                                                                                               |
-| **Image Links** | Not given for the competition                                                                                                                  |
+| Property                 | Value                                                                                                                                                                                                     |
+|:-------------------------|:----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| **Benchmark Name**       | `dta19`                                                                                                                                                                                                   |
+| **Version**              | _To be completed_                                                                                                                                                                                         |
+| **Components**           | page samples from the 39 books                                                                                                                                                                            |
+| **Exclusions**           | Only a sample of pages are retained from each book                                                                                                                                                        |
+| **Languages**            | German                                                                                                                                                                                                    |
+| **Document Granularity** | page                                                                                                                                                                                                      |
+| **Format**               | JSON Lines (.jsonl)                                                                                                                                                                                       |
+| **Schema**               | [hipe-ocrepair.schema.json](https://github.com/hipe-eval/HIPE-OCRepair-scorer/blob/main/data/schema/hipe-ocrepair.schema.json)                                                                            |
+| **License**              | [![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)                                                         |
+| **Benchmark DOI**        | [https://doi.org/10.5281/zenodo.18824344](https://doi.org/10.5281/zenodo.18824344)                                                                                                                        |
+| **Segmentation Levels**  | chunk, sentence, line                                                                                                                                                                                     |
+| **Offset Format**        | Character positions `[start, end]` in transcription_unit text                                                                                                                                             |
+| **Text Normalistion**    | _To be completed_                                                                                                                                                                                         |
+| **Line Breaks in Text**  | _To be completed_                                                                                                                                                                                         |
+| **Data Splits**          | Train, Dev, and Test (new)                                                                                                                                                                                |
+| **Split Strategy**       | Each split contains a fix set of books (no book spanning several splits); first and last pages excluded; random sample. Test set pages manually curated to remove truncated sentences at page boundaries. |
+| **Split Level**          | page                                                                                                                                                                                                      |
+| **Quality Metrics**      | CER, WER, OCR-QA score, alignment quality scores                                                                                                                                                          |
+| **Image Links**          | Not given for the competition                                                                                                                                                                             |
 
 ### Dataset Statistics 
 
