@@ -33,7 +33,9 @@ Data is available:
 
 ### Release History
 
-- **02.03.2026**: release [v0.9](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9)
+- **20.03.2026**: release of train and dev sets for `dta19` dataset | release tag [v0.9.2](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.2).
+- **11.03.2026**: hot fix for `impresso-snippets` dataset | release tag [v0.9.1](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.1).
+- **02.03.2026**: first data release with `overproof`, `icdar17`, `impresso-nzz` and `impresso-snippets` | release tag [v0.9](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9).
 
 ## Acknowledgements
 
