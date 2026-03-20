@@ -223,8 +223,7 @@ Two normalisation steps are applied sequentially to both system output and groun
 
 ~~Case, punctuation, digits, and accented characters are preserved as-is. Evaluation is therefore **case-sensitive** and **punctuation-sensitive**.~~
 
-**Correction (20.03.2026)**: As implemented in the [scorer](https://github.
-com/hipe-eval/HIPE-OCRepair-scorer/blob/dfc6a86bf7f11ad8c0c1d7baf1e1c4946e0659ef/hipe_ocrepair_scorer/ocrepair_eval.py#L246-L250), text is normalized prior to scoring: lowercased, Unicode letters and digits (including accented characters) are preserved, punctuation and symbols are replaced with spaces, and whitespace is collapsed.
+**Correction (20.03.2026)**: As implemented in the [scorer](https://github.com/hipe-eval/HIPE-OCRepair-scorer/blob/dfc6a86bf7f11ad8c0c1d7baf1e1c4946e0659ef/hipe_ocrepair_scorer/ocrepair_eval.py#L246-L250), text is normalized prior to scoring: lowercased, Unicode letters and digits (including accented characters) are preserved, punctuation and symbols are replaced with spaces, and whitespace is collapsed.
 
 ### 5.4 Metrics
 
