@@ -19,7 +19,7 @@ All information about the task, datasets, evaluation protocol, and submission in
 |                                              |                                                                                                        |
 |----------------------------------------------|--------------------------------------------------------------------------------------------------------|
 | 🌐 Competition website                       | https://hipe-eval.github.io/HIPE-OCRepair-2026/                                                        |
-| 📋 Participation Guidelines                  | [README-Participation-Guidelines.md](README-Participation-Guidelines.md)                               |
+| 📋 Participation Guidelines                  | [README-Participation-Guidelines.md](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/blob/main/README-Participation-Guidelines.md)                               |
 | 📈 Scorer                                    | [https://github.com/hipe-eval/HIPE-OCRepair-scorer](https://github.com/hipe-eval/HIPE-OCRepair-scorer) |
 | 📊 Evaluation repository (after competition) | https://github.com/hipe-eval/HIPE-OCRepair-2026-eval                                                   |
 | 🏆 Leaderboard (to come)                     | https://huggingface.co/spaces/hipe-ocrepair-2026-eval                                                  |
