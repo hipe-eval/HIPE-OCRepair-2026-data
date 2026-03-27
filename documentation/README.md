@@ -8,7 +8,7 @@ This folder contains documentation for the **datasets** included in the **Impres
 * [Overproof Dataset](README-overproof.md) - Sydney Morning Herald and Chronicling America articles (English)
 * [Impresso NZZ Dataset](README-impresso-nzz.md) - Neue Zürcher Zeitung with Black Letter font (German)
 * [Impresso Snippets Dataset](README-impresso-snippets.md) - Curated newspaper snippets from Impresso corpus (Multilingual)
-* [DAT19](README-dta19.md) - [to update]
+* [dta19](README-dta19.md) - Pages from German books (18-19C).
 
 ## Data Card Contents
 
