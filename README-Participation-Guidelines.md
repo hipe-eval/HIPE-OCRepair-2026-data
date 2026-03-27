@@ -276,95 +276,186 @@ Before scoring, both the system output and the ground truth are normalised (see 
 
 ### 5.5 Evaluation Metrics and Ranking Criteria
 
-#### Primary metric: cMER
+### Metrics and rankings
 
-All primary metrics are based on **character-level Match Error Rate (cMER)**. Unlike standard CER, cMER is bounded in \([0,1]\) because insertions are included in the denominator — this ensures comparability across documents of heterogeneous lengths.
+The primary evaluation metric is **character-level Match Error Rate (cMER)**. Secondary metrics include word-level MER and preference-based comparison scores against the raw OCR baseline.
 
-$$\text{cMER} = \frac{S + D + I}{H + S + D + I}$$
-
-where \(H\) = hits, \(S\) = substitutions, \(D\) = deletions, and \(I\) = insertions at the character level. A cMER of 0.05 means the hypothesis and reference differ by 5% at the character level.
-
-#### Normalization
-
-Before scoring in the normalized setup, texts are preprocessed as follows:
+Before scoring with normalization enabled, texts are normalized as follows:
 
 - lowercased
 - punctuation and other non-word characters replaced by spaces
 - underscores replaced by spaces
 - repeated whitespace collapsed
 
-Evaluation is therefore **case-insensitive** and **punctuation-insensitive**, but remains sensitive to accented characters (for example, `é` and `e` are treated as different).
+Evaluation is therefore **case-insensitive** and **punctuation-insensitive**, but still sensitive to accented characters (for example, `é` and `e` remain different).
 
-#### Formal metric definitions
+A cMER of 0.05 means that the hypothesis and reference differ by 5% at the character level.
 
-Each test dataset consists of a set of **transcription units**. All metrics are first computed at the transcription-unit level and then aggregated.
+#### Aggregation levels
 
-For a single transcription unit, MER is:
+Each test dataset consists of a set of **transcription units**. All metrics are first computed at the level of individual transcription units and then aggregated.
 
-$$\mathrm{MER} = \frac{S + D + I}{H + S + D + I}$$
+For each dataset, the scorer reports:
 
-For character-level scoring this gives **cMER**; for word-level scoring (using `jiwer.process_words(...)` after layout normalisation) this gives **wMER**.
+- **`cmer_micro`**: character-level MER obtained by summing alignment counts across all transcription units in the dataset and computing cMER once from the summed totals within a test set
+- **`cmer_macro`**: arithmetic mean of the transcription-unit-level cMER scores within a test set
+- **`wmer_micro`** and **`wmer_macro`** are computed in the same way as cmer_micro and cmer_macro, but using word-level alignments produced by jiwer.process_words(...) after normalization. Here, hits, substitutions, deletions, and insertions are counted over aligned word sequences rather than character sequences.
 
-For a dataset with transcription units \(i = 1, \ldots, N\):
+In other words:
 
-$$\mathrm{cMER}_{\mathrm{macro}} = \frac{1}{N} \sum_{i=1}^{N} \mathrm{cMER}_{i}$$
+- **micro** aggregation gives more weight to longer transcription units in a test set
+- **macro** aggregation gives equal weight to each transcription unit in a test set
 
-$$\mathrm{cMER}_{\mathrm{micro}} = \frac{\sum_i S_i + \sum_i D_i + \sum_i I_i}{\sum_i H_i + \sum_i S_i + \sum_i D_i + \sum_i I_i}$$
+#### Metric definitions used in the reports
 
-$(\mathrm{wMER}_{\mathrm{macro}})$ and $(\mathrm{wMER}_{\mathrm{micro}})$ are 
-defined analogously over word-level alignments. 
+The evaluation reports show the following metrics:
 
-In plain terms: 
-- **micro** aggregation gives more weight to longer transcription units; 
-- **macro** aggregation treats every unit equally.
+- **`cmer_micro`**: micro-averaged character-level Match Error Rate
+- **`cmer_macro`**: macro-averaged character-level Match Error Rate
+- **`wmer_micro`**: micro-averaged word-level Match Error Rate
+- **`wmer_macro`**: macro-averaged word-level Match Error Rate
+- **`pref_score_cmer_macro`**: macro-averaged preference score based on cMER
 
-#### Preference-based metrics
+At the transcription-unit level, MER is defined as:
 
-In addition to MER, the scorer reports metrics that compare each system output to the original (uncorrected) OCR. These capture whether a system *consistently* improves over the OCR baseline, rather than producing large gains on some units while degrading others.
+$$
+\mathrm{MER} = \frac{S + D + I}{H + S + D + I}
+$$
 
-For each transcription unit, the preference score is `1` if the system is better than the raw OCR, `0` if equal, and `-1` if worse. The reported metrics are macro averages over transcription units:
+where \(H\) = hits, \(S\) = substitutions, \(D\) = deletions, and \(I\) = insertions at the relevant alignment level (characters for cMER, words for wMER).
 
-$$\mathrm{pref\_score\_cmer\_macro} = \frac{1}{N} \sum_{i=1}^{N} \mathrm{pref}_{\mathrm{cmer}}(i) \qquad \mathrm{pref\_score\_wmer\_macro} = \frac{1}{N} \sum_{i=1}^{N} \mathrm{pref}_{\mathrm{wmer}}(i)$$
+For a dataset with transcription units \(i = 1, ..., N\):
+
+```math
+\mathrm{cMER\_micro} =
+\frac{\sum_i S_i + \sum_i D_i + \sum_i I_i}
+     {\sum_i H_i + \sum_i S_i + \sum_i D_i + \sum_i I_i}
+```
+
+```math
+\mathrm{wMER\_micro} =
+\frac{\sum_i S_i + \sum_i D_i + \sum_i I_i}
+     {\sum_i H_i + \sum_i S_i + \sum_i D_i + \sum_i I_i}
+```
+
+```math
+\mathrm{cMER\_macro} = \frac{1}{N} \sum_{i=1}^{N} \mathrm{cMER}_{i}
+```
+
+```math
+\mathrm{wMER\_macro} = \frac{1}{N} \sum_{i=1}^{N} \mathrm{wMER}_{i}
+```
+
+The preference score for one transcription unit _i_ is defined as follows:
+
+```math
+\mathrm{pref}(i) =
+\begin{cases}
+1 & \text{if the system score is better than the raw OCR score} \\
+0 & \text{if both scores are equal} \\
+-1 & \text{if the system score is worse than the raw OCR score}
+\end{cases}
+```
+
+The reported preference metrics are macro averages over transcription units:
+
+```math
+\mathrm{pref\_score\_cMER\_macro} =
+\frac{1}{N} \sum_{i=1}^{N} \mathrm{pref\_cMER}(i)
+```
+
+#### Confidence intervals
+
+The report tables include **95% bootstrap confidence intervals** for **`cmer_micro`** and **`pref_score_cmer_macro`**. These intervals are based on **10,000 bootstrap resamples** of the transcription units.
+
+For **micro-averaged** metrics such as `cmer_micro`, the scorer resamples transcription units, sums their alignment counts, and recomputes the score from the pooled totals. For **macro-averaged** metrics such as `pref_score_cmer_macro`, it resamples the transcription units, recomputes the per-unit scores, and then takes their mean.
+
+The reported lower and upper bounds correspond to the **2.5th** and **97.5th
+percentiles** of the bootstrap distribution. In `fold_scores`, each metric is stored as
+`(score, low_ci, high_ci)`. In `averaged_scores`, the central value is the unweighted
+mean across datasets, and the confidence interval is obtained from the mean of the
+per-dataset bootstrap samples.
+
+#### Per-dataset scores and overall averages
+
+Scoring is performed **per dataset** (using `primary_dataset_name` as the grouping key). In the output of the scorer, these dataset-level results are stored under `fold_scores`.
+
+The overall results in `averaged_scores` are then computed as the **unweighted mean across datasets** of the corresponding dataset-level scores.
+
+This means that:
+
+- `fold_scores[dataset]["cmer_micro"]` is the **micro cMER within that dataset**
+- `averaged_scores["cmer_micro"]` is the **mean of the dataset-level micro cMER values**
+
+So the overall average is **not** a single global micro-average over all transcription units from all datasets combined. Instead, it is an equal-weight average over datasets.
 
 #### Primary and secondary ranking criteria
 
-The **primary ranking metric** is **`cmer_micro`** (lower is better), computed separately for each dataset. The **secondary ranking metric** is **`pref_score_cmer_macro`** (higher is better), used as a tiebreaker: in case of identical primary scores, runs are ranked by this metric in descending order.
+The **primary per-test-set ranking metric** is **`cmer_micro`**:
 
-#### Official competition ranking
+- lower is better
+- computed separately for each dataset
+- longer transcription units contribute more within a dataset
 
-The **official competition ranking** is a **weighted mean of per-test-set `cmer_micro`** across the 8 official test sets. The secondary criterion is the corresponding weighted mean of `pref_score_cmer_macro`.
+The **secondary ranking metric** is **`pref_score_cmer_macro`**:
 
-The weighting scheme is chosen so that each language contributes equally regardless of how many test sets represent it:
+- higher is better
+- measures how consistently a system improves over the raw OCR input across transcription units
+- each transcription unit contributes equally
 
-| Dataset             | Language | Weight |
-| ------------------- | -------- | ------ |
-| `icdar2017`         | en       | 1      |
-| `impresso-snippets` | en       | 1      |
-| `icdar2017`         | fr       | 1      |
-| `impresso-snippets` | fr       | 1      |
-| `impresso-snippets` | de       | 1      |
-| `dta19-l0`          | de       | 1/3    |
-| `dta19-l1`          | de       | 1/3    |
-| `dta19-l2`          | de       | 1/3    |
+#### Official competition ranking across test sets
 
-The three DTA test sets together carry the same total weight as any single other test set, so that German is not overrepresented in the overall ranking. 
+The scorer outputs per-dataset scores, including `cmer_micro` for each dataset.
+The **official competition ranking** is computed separately from these scorer outputs as a **weighted mean of per-test-set `cmer_micro`** across the 8 official test sets.
 
-Note that `impresso-nzz` and `overproof-combined` do not contribute to the official rankings because they were released publicly before the competition.
+The weighting scheme is defined by the competition design and is **not** the same as the scorer’s internal `averaged_scores`, which uses an unweighted mean across datasets.
+
+The weights are chosen so that the language-level contributions remain balanced:
+
+- for **English** and **French**, each language score is based on **two test sets**, each with weight **1**
+- for **German**, the score is based on **four test sets**: `impresso-snippets` with weight **1**, and the three DTA test sets (`dta19-l0`, `dta19-l1`, `dta19-l2`) with weight **1/3** each
+
+Thus, the three DTA test sets together contribute the same total weight as one other test set. For German, this makes the combined DTA contribution match the weight of `impresso-snippets`, just as English and French each combine two equally weighted test sets.
+
+| Unversioned dataset identifier | Lang | Weight |
+| ------------------------------ | ---- | ------ |
+| `dta19-l0`                     | de   | 1/3    |
+| `dta19-l1`                     | de   | 1/3    |
+| `dta19-l2`                     | de   | 1/3    |
+| `impresso-snippets`            | de   | 1      |
+
+| Unversioned dataset identifier | Lang | Weight |
+| ------------------------------ | ---- | ------ |
+| `icdar2017`                    | en   | 1      |
+| `impresso-snippets`            | en   | 1      |
+
+| Unversioned dataset identifier | Lang | Weight |
+| ------------------------------ | ---- | ------ |
+| `icdar2017`                    | fr   | 1      |
+| `impresso-snippets`            | fr   | 1      |
+
+`impresso-nzz` and `overproof-combined` datasets do not contribute to the official rankings because they have been released earlier to the public.
 
 #### Per-language rankings
 
-In addition to the overall ranking, we report **per-language rankings** computed as a weighted mean of per-test-set `cmer_micro` over the official test sets for that language, with the same weights as above:
+In addition to the overall competition ranking, we report **per-language rankings** of submitted runs.
 
-- **English**: mean over `icdar2017` and `impresso-snippets`
-- **French**: mean over `icdar2017` and `impresso-snippets`
-- **German**: `impresso-snippets` with weight `1`; `dta19-l0`, `dta19-l1`, `dta19-l2` with weight `1/3` each
+For a given language, the ranking is computed as a **weighted mean of per-test-set `cmer_micro`** over the official test sets for that language. The secondary criterion is the corresponding **weighted mean of `pref_score_cmer_macro`**.
 
-The secondary criterion for per-language rankings is the corresponding weighted mean of `pref_score_cmer_macro`.
+This means in terms of unversioned datasets:
 
-#### Results
+- for **English**, the language score is the mean over `icdar2017` and `impresso-snippets`
+- for **French**, the language score is the mean over `icdar2017` and `impresso-snippets`
+- for **German**, the language score is computed from `impresso-snippets` with weight `1` and from `dta19-l0`, `dta19-l1`, and `dta19-l2` with weight `1/3` each
 
-The evaluation results will be published in a GitHub repository (after the 
-competition period) and on the [HIPE-OCRepair-2026 website](https://hipe-eval.github.io/HIPE-OCRepair-2026/results).
+As in the overall ranking, these language-level rankings are based on weighted combinations of **per-test-set scores**. They should not be confused with the scorer’s internal notions of **micro** and **macro**, which refer to aggregation over transcription units within a dataset.
+
+### Results
+
+The evaluation results are available in [HIPE_OCRepair_2026_evaluation_results.md](HIPE_OCRepair_2026_evaluation_results.md) and on the [HIPE-OCRepair-2026 website](https://hipe-eval.github.io/HIPE-OCRepair-2026/results).
+
+The **official competition ranking** is computed as described above: a **weighted mean of `cmer_micro`** across the official test sets, with the corresponding **weighted mean of `pref_score_cmer_macro`** as secondary criterion.
+
 
 ### 5.6 Scorer
 
