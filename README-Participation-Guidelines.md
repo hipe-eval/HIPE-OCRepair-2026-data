@@ -133,15 +133,14 @@ These transformations can be applied to training data without affecting evaluati
 
 ### 3.5 OCR Source, GT Quality and Filtering
 
-| Dataset             | Lang     | OCR Engine                      | Avg CER (train) | Avg CER (dev) | Avg CER (test) | CER Filter     | GT Source                     | GT Correction Status                 |
-| :------------------ | :------- | :------------------------------ | :-------------: | :-----------: | :------------: | :------------- | :---------------------------- | :----------------------------------- |
-| `icdar2017`         | en       | various                         |      0.038      |     0.042     |      TBD       | > 0.15 removed | IMPACT project (manual)       | train: original; dev/test: corrected |
-| `icdar2017`         | fr       | various                         |      0.038      |      TBD      |     0.028      | > 0.15 removed | IMPACT project (manual)       | train: original; dev/test: corrected |
-| `overproof`         | en       | ABBYY                           |      0.083      |      TBD      |      TBD       | > 0.15 removed | crowdsourced (Trove) + manual | train: original; dev/test: corrected |
-| `impresso-nzz`      | de       | ABBYY FineReader Server 11      |       TBD       |       —       |      TBD       | none           | manual                        | train: original; test: corrected     |
-| `dta19` (level 1)   | de       | artificially degraded (level 1) |       TBD       |      TBD      |      TBD       | none           | manual (DTA)                  | train: original; dev/test: corrected |
-| `dta19` (level 2)   | de       | artificially degraded (level 2) |       TBD       |      TBD      |      TBD       | none           | manual (DTA)                  | train: original; dev/test: corrected |
-| `impresso-snippets` | fr,de,en | various                         |       TBD       |      TBD      |      TBD       | > 0.15 removed | manual (Impresso)             | newly created                        |
+| Dataset                 | Lang     | OCR Engine                 | Avg CER (train) | Avg CER (dev) | Avg CER (test) | CER Filter     | GT Source                     | GT Correction Status                 |
+|:------------------------| :------- |:---------------------------| :-------------: | :-----------: | :------------: | :------------- | :---------------------------- | :----------------------------------- |
+| `icdar2017`             | en       | various                    |      0.038      |     0.042     |      TBD       | > 0.15 removed | IMPACT project (manual)       | train: original; dev/test: corrected |
+| `icdar2017`             | fr       | various                    |      0.038      |      TBD      |     0.028      | > 0.15 removed | IMPACT project (manual)       | train: original; dev/test: corrected |
+| `overproof`             | en       | ABBYY                      |      0.083      |      TBD      |      TBD       | > 0.15 removed | crowdsourced (Trove) + manual | train: original; dev/test: corrected |
+| `impresso-nzz`          | de       | ABBYY FineReader Server 11 |       TBD       |       —       |      TBD       | none           | manual                        | train: original; test: corrected     |
+| `dta19` (level 0, 1, 2) | de       | Tesseract                  |       TBD       <br/>|      TBD      |      TBD       | none           | manual (DTA)                  | train: original; dev/test: corrected |
+| `impresso-snippets`     | fr,de,en | various                    |       TBD       |      TBD      |      TBD       | > 0.15 removed | manual (Impresso)             | newly created                        |
 
 ### 3.6 Splits
 
@@ -222,7 +221,9 @@ Submission files are JSONL files (one JSON object per line). Each record must co
 }
 ```
 
-Any document left with `ocr_postcorrection_output: null` is treated as identical to the OCR input (no correction applied).
+To be considered valid, a submission file must:   
+1.	Validate against the json [schema](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/blob/main/schema/hipe-ocrepair.schema.json).
+2.	Contain text in the `ocr_postcorrection_output` field. Any document left with `ocr_postcorrection_output: null` is treated as identical to the OCR input (no correction applied).
 
 **File naming convention:**
 A submission filename is formed by prepending your team name and appending a run suffix to the reference filename:
@@ -267,7 +268,7 @@ The following datasets are part of the official competition and test files are e
 | overproof                    | `overproof-combined_v1.0`    | en          | not part of competition                                           |
 | impresso-nzz                 | `impresso-nzz_v1.1`          | de          | not part of competition                                           |
 
-> **Note on dta19 level numbering:** the competition test sets cover levels 0, 1, and 2. Level 0 corresponds to the least degraded condition; levels 1 and 2 introduce increasing noise. 
+ **Note on dta19 level numbering:** the competition test sets cover levels 0, 1, and 2. Level 0 corresponds to the least degraded condition; levels 1 and 2 introduce increasing noise. 
 
 ### 5.4 Pre-processing Before Scoring
 
@@ -310,7 +311,12 @@ $$\mathrm{cMER}_{\mathrm{macro}} = \frac{1}{N} \sum_{i=1}^{N} \mathrm{cMER}_{i}$
 
 $$\mathrm{cMER}_{\mathrm{micro}} = \frac{\sum_i S_i + \sum_i D_i + \sum_i I_i}{\sum_i H_i + \sum_i S_i + \sum_i D_i + \sum_i I_i}$$
 
-\(\mathrm{wMER}_{\mathrm{macro}}\) and \(\mathrm{wMER}_{\mathrm{micro}}\) are defined analogously over word-level alignments. In plain terms: **micro** aggregation gives more weight to longer transcription units; **macro** aggregation treats every unit equally.
+$(\mathrm{wMER}_{\mathrm{macro}})$ and $(\mathrm{wMER}_{\mathrm{micro}})$ are 
+defined analogously over word-level alignments. 
+
+In plain terms: 
+- **micro** aggregation gives more weight to longer transcription units; 
+- **macro** aggregation treats every unit equally.
 
 #### Preference-based metrics
 
@@ -341,7 +347,9 @@ The weighting scheme is chosen so that each language contributes equally regardl
 | `dta19-l1`          | de       | 1/3    |
 | `dta19-l2`          | de       | 1/3    |
 
-The three DTA test sets together carry the same total weight as any single other test set, so that German is not overrepresented in the overall ranking. Note that `impresso-nzz` and `overproof-combined` do not contribute to the official rankings because they were released publicly before the competition.
+The three DTA test sets together carry the same total weight as any single other test set, so that German is not overrepresented in the overall ranking. 
+
+Note that `impresso-nzz` and `overproof-combined` do not contribute to the official rankings because they were released publicly before the competition.
 
 #### Per-language rankings
 
@@ -355,7 +363,8 @@ The secondary criterion for per-language rankings is the corresponding weighted 
 
 #### Results
 
-The evaluation results will be published in the GitHub repository (after the competition period) and on the [HIPE-OCRepair-2026 website](https://hipe-eval.github.io/HIPE-OCRepair-2026/results).
+The evaluation results will be published in a GitHub repository (after the 
+competition period) and on the [HIPE-OCRepair-2026 website](https://hipe-eval.github.io/HIPE-OCRepair-2026/results).
 
 ### 5.6 Scorer
 
@@ -368,10 +377,9 @@ Participants are encouraged to use both tools before the official submission dea
 
 ### 5.7 How to Submit
 
-Submit a single ZIP archive named after your team name, containing all your run files. For example, if your team name is `myteam`, the archive should be named `myteam.zip` and contain files like `myteam_hipe-ocrepair-bench_v1.0_impresso-snippets_v1.0_test_de_run1.jsonl`.
+Submit a **single ZIP archive** named after your team name, containing all your run files. For example, if your team name is `myteam`, the archive should be named `myteam.zip` and contain files like `myteam_hipe-ocrepair-bench_v1.0_impresso-snippets_v1.0_test_de_run1.jsonl`.
 
-Please submit the ZIP file at the emails communicated via the mailing list. A 
-confirmation email will be sent upon successful receipt of your submission.
+Please submit the ZIP file at the emails communicated via the mailing list. A confirmation email will be sent upon successful receipt of your submission.
 
 ### 5.8 Reproducibility and Leaderboard
 
@@ -382,7 +390,6 @@ After the competition:
 
 Participants are also encouraged to share their system description papers and code repositories in order to support reproducibility and foster further research in this area.
 
----
 
 ## 6. Competition Report
 
@@ -390,13 +397,11 @@ ICDAR Competitions do not foresee mandatory system description papers, but we st
 
 A **competition overview paper** will be compiled by the organisers and submitted to the ICDAR 2026 proceedings, summarising the approaches and results of all participating teams. Organisers will contact participants shortly after the competition to collect the necessary information.
 
----
 
 ## License
 
 See per-dataset licenses on datasets individual [README files](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/tree/main/documentation).
 
----
 
 ## Acknowledgments
 
