@@ -209,9 +209,6 @@ Submission files are JSONL files (one JSON object per line). Each record must co
     "language": "Language code (e.g., en, de, fr)",
     "... other metadata fields as in the reference files": "..."
   },
-  "ground_truth": {
-    "transcription_unit": "Will be masked"
-  },
   "ocr_hypothesis": {
     "transcription_unit": "Original OCR text (as provided)"
   },
