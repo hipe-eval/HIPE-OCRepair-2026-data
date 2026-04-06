@@ -255,18 +255,18 @@ The following datasets are part of the official competition and test files are e
 
 **Competition 2026 Test Data Table**
 
-| Source dataset               | Versioned dataset identifier | Language(s) | Test Files                                                        |
-| ---------------------------- | ---------------------------- | ----------- | ----------------------------------------------------------------- |
-| icdar2017                    | `icdar2017_v1.1`             | en          | `hipe-ocrepair-bench_v1.0_icdar2017_v1.1_test_en.jsonl`           |
-| icdar2017                    | `icdar2017_v1.1`             | fr          | `hipe-ocrepair-bench_v1.0_icdar2017_v1.1_test_fr.jsonl`           |
-| impresso-snippets            | `impresso-snippets_v1.0`     | de          | `hipe-ocrepair-bench_v1.0_impresso-snippets_v1.0_test_de.jsonl`   |
-| impresso-snippets            | `impresso-snippets_v1.0`     | en          | `hipe-ocrepair-bench_v1.0_impresso-snippets_v1.0_test_en.jsonl`   |
-| impresso-snippets            | `impresso-snippets_v1.0`     | fr          | `hipe-ocrepair-bench_v1.0_impresso-snippets_v1.0_test_fr.jsonl`   |
-| dta19 (level 0, unmatched)   | `dta19-l0_v0.1`              | de          | `hipe-ocrepair-bench_v1.0_dta19-l0_v0.1_test-unmatched_de.jsonl`  |
-| dta19 (level 1, unmatched)   | `dta19-l1_v0.1`              | de          | `hipe-ocrepair-bench_v1.0_dta19-l1_v0.1_test-unmatched_de.jsonl`  |
-| dta19 (level 2, unmatched)   | `dta19-l2_v0.1`              | de          | `hipe-ocrepair-bench_v1.0_dta19-l2_v0.1_test-unmatched_de.jsonl`  |
-| overproof                    | `overproof-combined_v1.0`    | en          | not part of competition                                           |
-| impresso-nzz                 | `impresso-nzz_v1.1`          | de          | not part of competition                                           |
+| Source dataset               | Versioned dataset identifier | Language(s) | Test Files                                                               |
+| ---------------------------- | ---------------------------- | ----------- |--------------------------------------------------------------------------|
+| icdar2017                    | `icdar2017_v1.1`             | en          | `hipe-ocrepair-bench_v0.9_icdar2017_v1.1_masked-test_en.jsonl`           |
+| icdar2017                    | `icdar2017_v1.1`             | fr          | `hipe-ocrepair-bench_v0.9_icdar2017_v1.1_masked-test_fr.jsonl`                  |
+| impresso-snippets            | `impresso-snippets_v1.0`     | de          | `hipe-ocrepair-bench_v0.9_impresso-snippets_v1.0_masked-test_de.jsonl`          |
+| impresso-snippets            | `impresso-snippets_v1.0`     | en          | `hipe-ocrepair-bench_v0.9_impresso-snippets_v1.0_masked-test_en.jsonl`          |
+| impresso-snippets            | `impresso-snippets_v1.0`     | fr          | `hipe-ocrepair-bench_v0.9_impresso-snippets_v1.0_masked-test_fr.jsonl`          |
+| dta19 (level 0, unmatched)   | `dta19-l0_v0.1`              | de          | `hipe-ocrepair-bench_v0.9_dta19-l0_v0.1_masked-test-unmatched_de.jsonll` |
+| dta19 (level 1, unmatched)   | `dta19-l1_v0.1`              | de          | `hipe-ocrepair-bench_v0.9_dta19-l1_v0.1_masked-test-unmatched_de.jsonl`  |
+| dta19 (level 2, unmatched)   | `dta19-l2_v0.1`              | de          | `hipe-ocrepair-bench_v0.9_dta19-l2_v0.1_masked-test-unmatched_de.jsonl`  |
+| overproof                    | `overproof-combined_v1.0`    | en          | not part of competition                                                  |
+| impresso-nzz                 | `impresso-nzz_v1.1`          | de          | not part of competition                                                  |
 
  **Note on dta19 level numbering:** the competition test sets cover levels 0, 1, and 2. Level 0 corresponds to the least degraded condition; levels 1 and 2 introduce increasing noise. 
 
