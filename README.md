@@ -12,7 +12,7 @@ The competition addresses this by providing **HIPE-OCRepair-Bench**, a unified m
 
 ## 📋 Participation Guidelines
 
-All information about the task, datasets, evaluation protocol, and submission instructions is available in the **[Participation Guidelines](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/blob/data-guidelines-release/README-Participation-Guidelines.md)**.
+All information about the task, datasets, evaluation protocol, and submission instructions is available in the **[Participation Guidelines](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/blob/main/README-Participation-Guidelines.md)**.
 
 ## 🔗 Important Links
 
@@ -33,9 +33,10 @@ Data is available:
 
 ### Release History
 
-- **20.03.2026**: release of train and dev sets for `dta19` dataset | release tag [v0.9.2](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.2).
-- **11.03.2026**: hot fix for `impresso-snippets` dataset | release tag [v0.9.1](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.1).
-- **02.03.2026**: first data release with `overproof`, `icdar17`, `impresso-nzz` and `impresso-snippets` | release tag [v0.9](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9).
+- **06.04.2026**: Release of masked test files for the competition | release tag [v0.9.3](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.3)
+- **20.03.2026**: Release of train and dev sets for `dta19` dataset | release tag [v0.9.2](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.2).
+- **11.03.2026**: Hot fix for `impresso-snippets` dataset | release tag [v0.9.1](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.1).
+- **02.03.2026**: First data release with `overproof`, `icdar17`, `impresso-nzz` and `impresso-snippets` | release tag [v0.9](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9).
 
 ## Acknowledgements
 
