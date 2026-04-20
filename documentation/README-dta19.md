@@ -39,9 +39,7 @@ The benchmark provides two distinct versions of the dataset using different page
   - DTA19 train/dev files retain original naming: Files explicitly labeled with `unmatched` (e.g., `*_train-unmatched_de.jsonl`) contain unmatched documents; files labeled with matched (e.g., `*_train-matched_de.jsonl`) contain matched documents.
 - **Release v0.9.3** (2026-04-06): 
   - Publication of masked test files for all DTA19 unmatched test sets (GT labels hidden for blind evaluation).
-- **Release v0.9.2** (2026-03-20) and **Release v0.9.1** (2026-03-11): 
-  - Updates to other datasets; DTA19 files unchanged from v0.9.
-- **Release v0.9** (2026-03-02)
+- **Release v0.9.2** (2026-03-20)
   - Initial DTA19 dataset release
   - Page samples from 39 German books from the Deutsche Textarchiv (period: 1797-1898)
   - Three synthetic OCR noise levels (l0, l1, l2) with controlled image degradation

@@ -23,6 +23,12 @@ The documents are sampled from various European newspaper collections spanning 1
 
 ### HIPE-OCRepair Benchmark Release Notes
 
+- **Release v0.9.5** (2026-04-20):
+  - Post-competition ground truth corrections: All test files were manually reviewed and corrected after participant submissions, based on inspection of the best system outputs. Official evaluation results are based on these corrected files.
+- **Release v0.9.3** (2026-04-06): 
+  - Publication of masked test files (GT labels hidden for blind evaluation).
+- **Release v0.9.2** (2026-03-20)  and **Release v0.9.1** (2026-03-11):
+  - impresso-snippet files unchanged from v0.9.
 - **Release v0.9**
   - Initial release with manually corrected impresso snippets across three languages.
   - JSONL format following the HIPE-OCRepair JSON schema.
