@@ -54,11 +54,31 @@ Participating teams may publish their own system description papers. We will mai
 - **Team Name** - *Paper Title* - [Venue/Preprint] - [Link] *(coming soon)*
 
 
-## Acknowledgements
+## Acknowledgments
 
-The HIPE-OCRepair-2026 organising team expresses its sincere appreciation to the ICDAR-2026 Competition Committee for the overall coordination and support. 
+The HIPE-OCRepair-2026 organising team expresses its sincere appreciation to the ICDAR-2026 Competition Committee for the overall coordination and support.
 
-HIPE-OCRepair-2026 is part of the [HIPE-eval](https://github.com/hipe-eval) series of shared tasks on historical
-document and information processing and evaluation.
+### Participating Teams
+
+We thank all teams who participated in the HIPE-OCRepair-2026 shared task:
+
+#### BnF-Mistral
+- **Mistral AI:** Maxime Kunsch, Jacques Sun, Yassine El Ouahidi
+- **Bibliothèque nationale de France (BnF):** Sébastien Crétin, Marcel Bautista, Jean-Philippe Moreux
+
+#### BLOCR
+- **British Library:** Valentina Vavassori, Harry Lloyds
+- **Code:** [github.com/harrylloyd-bl/hipe-ocrepair](https://github.com/harrylloyd-bl/hipe-ocrepair)
+
+#### L3i
+- **L3i Laboratory, La Rochelle Université:** Tien Nam Nguyen, Wenjun Sun, Ahmed Hamdi, Carlos-Emiliano Gonzalez-Gallardo, Mickaël Coustaty, Antoine Doucet
+
+#### zakaria-ENSIAS
+- **ENSIAS, Rabat, Morocco:** Zakaria Bouaouda
+
+
+### HIPE-eval Series
+
+HIPE-OCRepair-2026 is part of the [HIPE-eval](https://github.com/hipe-eval) series of shared tasks on historical document and information processing and evaluation.
 
 HIPE-eval editions are organised within the framework of the [Impresso – Media Monitoring of the Past](https://impresso-project.ch) project, funded by the Swiss National Science Foundation under grant No. CRSII5_213585 and by the Luxembourg National Research Fund under grant No. 17498891.
