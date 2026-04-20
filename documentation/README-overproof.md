@@ -26,6 +26,8 @@ For inclusion in the Impresso HIPE-OCRepair benchmark, the corpus underwent addi
 
 ### HIPE-OCRepair Benchmark Release Notes
 
+- **Release v0.9.5/3/2/1** 
+  - impresso-nzz files unchanged from v0.9.
 - **Release v0.9**
     - Initial release with curated and converted Overproof Dataset 2 and Dataset 3.
     - Exclusion of Dataset 1 due to unreliable ground truth.

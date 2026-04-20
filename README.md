@@ -33,10 +33,26 @@ Data is available:
 
 ### Release History
 
+- **20.04.2026**: Final competition release with **unmasked test files** incorporating post-submission ground truth corrections | release tag [v0.9.5](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.5)
 - **06.04.2026**: Release of **masked test files** for the competition | release tag [v0.9.3](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.3)
-- **20.03.2026**: Release of train and dev sets for `dta19` dataset | release tag [v0.9.2](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.2).
-- **11.03.2026**: Hot fix for `impresso-snippets` dataset | release tag [v0.9.1](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.1).
-- **02.03.2026**: First data release with `overproof`, `icdar17`, `impresso-nzz` and `impresso-snippets` | release tag [v0.9](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9).
+- **20.03.2026**: Release of train and dev sets for `dta19` dataset | release tag [v0.9.2](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.2)
+- **11.03.2026**: Hot fix for `impresso-snippets` dataset | release tag [v0.9.1](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.1)
+- **02.03.2026**: First data release with `overproof`, `icdar17`, `impresso-nzz` and `impresso-snippets` | release tag [v0.9](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9)
+
+## Citation
+
+### Competition Report
+
+The HIPE-OCRepair-2026 shared task will be described in a competition report paper currently under review for the proceedings of ICDAR 2026.
+
+**Citation:** *(BibTeX entry will be provided upon publication)*
+
+### Participant Publications
+
+Participating teams may publish their own system description papers. We will maintain a list of these publications here:
+
+- **Team Name** - *Paper Title* - [Venue/Preprint] - [Link] *(coming soon)*
+
 
 ## Acknowledgements
 

@@ -33,13 +33,22 @@ The benchmark provides two distinct versions of the dataset using different page
 
 ### Benchmark Release Notes
 
-- **Release v0.9**
-    - Page samples from 39 German books (period 1797-1898)
-    - Three synthetic OCR noise levels (l0, l1, l2) with controlled degradation
-    - Two sampling strategies available: matched (same pages across noise levels) and unmatched (different pages per noise level)
-    - Text normalization applied to ground truth and OCR
-    - Line breaks preserved in transcription
-    - Automatic sentence and chunk segmentation (chunks may correspond to full pages given small page size)
+- **Release v0.9.5** (2026-04-20):
+  - Post-competition ground truth corrections: All test files were manually reviewed and corrected after participant submissions, based on inspection of the best system outputs. Official evaluation results are based on these corrected files.
+  - DTA19 test file naming convention change: Test files now consist exclusively of unmatched documents, and the `unmatched` label has been removed from their filenames for clarity (e.g., `*_test_de.jsonl` instead of `*_test-unmatched_de.jsonl`).
+  - DTA19 train/dev files retain original naming: Files explicitly labeled with `unmatched` (e.g., `*_train-unmatched_de.jsonl`) contain unmatched documents; files labeled with matched (e.g., `*_train-matched_de.jsonl`) contain matched documents.
+- **Release v0.9.3** (2026-04-06): 
+  - Publication of masked test files for all DTA19 unmatched test sets (GT labels hidden for blind evaluation).
+- **Release v0.9.2** (2026-03-20)
+  - Initial DTA19 dataset release
+  - Page samples from 39 German books from the Deutsche Textarchiv (period: 1797-1898)
+  - Three synthetic OCR noise levels (l0, l1, l2) with controlled image degradation
+  - Two sampling strategies available: 
+    - Matched: Same pages used across all three noise levels (enables paired comparison)
+    - Unmatched: Different pages per noise level (maximizes data diversity, 3× more unique pages)
+  - Text normalization applied to both ground truth and OCR
+  - Line breaks preserved in transcription with offset metadata
+  - Automatic sentence and chunk segmentation applied (chunks may correspond to full pages given small page size)
 
 ## 1. Original Dataset
 

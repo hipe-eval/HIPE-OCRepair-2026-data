@@ -25,6 +25,8 @@ For the HIPE-OCRepair benchmark, pages were filtered to exclude cases where OCR 
 
 ### Benchmark Release Notes
 
+- **Release v0.9.5/3/2/1** 
+  - impresso-nzz files unchanged from v0.9.
 - **Release v0.9**
     - Pages with structural misalignments between OCR and ground truth excluded
     - Text constructed by concatenating lines and regions, preserving layout with line breaks (`\n`) and region breaks (`\n\n`).
