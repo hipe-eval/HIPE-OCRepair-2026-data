@@ -39,7 +39,7 @@ Data is available:
 - **11.03.2026**: Hot fix for `impresso-snippets` dataset | release tag [v0.9.1](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9.1)
 - **02.03.2026**: First data release with `overproof`, `icdar17`, `impresso-nzz` and `impresso-snippets` | release tag [v0.9](https://github.com/hipe-eval/HIPE-OCRepair-2026-data/releases/tag/v0.9)
 
-## Citation
+## 🎓 Citation
 
 ### Competition Report
 
@@ -54,11 +54,11 @@ Participating teams may publish their own system description papers. We will mai
 - **Team Name** - *Paper Title* - [Venue/Preprint] - [Link] *(coming soon)*
 
 
-## Acknowledgments
+## 🤝 Acknowledgments
 
 The HIPE-OCRepair-2026 organising team expresses its sincere appreciation to the ICDAR-2026 Competition Committee for the overall coordination and support.
 
-### Participating Teams
+### 👥 Participating Teams
 
 We thank all teams who participated in the HIPE-OCRepair-2026 shared task:
 
@@ -77,7 +77,7 @@ We thank all teams who participated in the HIPE-OCRepair-2026 shared task:
 - **ENSIAS, Rabat, Morocco:** Zakaria Bouaouda
 
 
-### HIPE-eval Series
+### 📚 HIPE-eval Series
 
 HIPE-OCRepair-2026 is part of the [HIPE-eval](https://github.com/hipe-eval) series of shared tasks on historical document and information processing and evaluation.
 
