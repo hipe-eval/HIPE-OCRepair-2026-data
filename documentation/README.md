@@ -1,6 +1,6 @@
-# HIPE-OCRepair Benchmark - Dataset Documentation
+# HIPE-OCRepair-2026 - Dataset Documentation
 
-This folder contains documentation for the **datasets** included in the **Impresso HIPE-OCRepair Benchmark** for OCR post-correction of historical documents. Each dataset has its own dedicated README serving as a data card with information about origin, processing, and benchmark characteristics.
+This folder contains documentation for the **datasets** included in the **HIPE-OCRepair-2026** dataset for OCR post-correction of historical documents. Each dataset has its own dedicated README serving as a data card with information about origin, processing, and benchmark characteristics.
 
 ## Available Datasets
 
